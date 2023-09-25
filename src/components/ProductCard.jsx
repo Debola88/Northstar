@@ -5,8 +5,8 @@ import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 function ProductCard () {
   return (
-    <div className=''>
-    <div className='bg-white text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden'>
+    <div className='w-full'>
+    <div className='bg-white text-gray-700 min-h-[10rem] shadow-lg rounded-md overflow-hidden'>
       <img src={Box} alt='' className='w-full h-full object-cover' />
       <div className='p-5 flex-col flex gap-3'>
         <div className='flex items-center gap-2'>

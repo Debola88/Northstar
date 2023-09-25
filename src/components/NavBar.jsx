@@ -15,7 +15,7 @@ const NavBar = () => {
   const handleClick = () => setClick(!click);
 
   const content = <>
-    <div className='lg:hidden block absolute top-16 w-full bg-red-500 left-0 transition'>
+    <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-20 ">
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
