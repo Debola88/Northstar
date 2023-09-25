@@ -7,13 +7,13 @@ import BestSelling from '../components/BestSelling';
 
 function HomePage() {
     return (
-        <div>
+        <>
             <Hero />
             <NewProducts />
             <Benefit />
             <Promo />
             <BestSelling />  
-        </div>
+        </>
     )
 }
 
