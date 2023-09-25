@@ -2,8 +2,7 @@ import React from 'react'
 import { LuUser } from "react-icons/lu";
 import { BiArchive } from "react-icons/bi";
 import { FiMenu } from "react-icons/fi";
-// import { Link } from "react-scroll";
-import { FaTimes } from "react-icons/fa"
+import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { useState } from 'react';
 import { BiHomeAlt2 } from "react-icons/bi";
@@ -16,7 +15,7 @@ const NavBar = () => {
   const handleClick = () => setClick(!click);
 
   const content = <>
-    <div className=' lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
+    <div className='lg:hidden block absolute top-16 w-full bg-red-500 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-20 ">
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
@@ -30,7 +29,7 @@ const NavBar = () => {
 
 
   return (
-    <nav className="bg-slate-100 top-0 left-0 w-full fixed">
+    <nav className="fixed bg-slate-100 top-0 left-0 w-full">
       <div className="h-10vh flex justify-between lg:py-5 px-10 sm:px-16 py-4">
         <div className="flex items-center flex-1">
           <span className='text-3xl font-bold text-black'>NorthStar</span>
