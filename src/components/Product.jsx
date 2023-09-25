@@ -1,7 +1,5 @@
 import React from 'react'
-import NavBar from './NavBar'
 import Selector from './Selector'
-import Footer from './Footer'
 import image from '../assets/img_1.png'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
@@ -11,7 +9,6 @@ import { MdOutlineEmail } from 'react-icons/md'
 function Product() {
     return (
         <div>
-            <NavBar />
             <div className='p-16 w-full'>
                 <div className='flex flex-col justify-between'>
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8'>
@@ -105,7 +102,6 @@ function Product() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div >
     )
 }

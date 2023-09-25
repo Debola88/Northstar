@@ -5,7 +5,7 @@ import { Outlet } from 'react-router'
 
 function Layout () {
   return (
-    <div>
+    <div className="App bg-slate-100 text-gray-800">
       <NavBar/>
         <main>
           <Outlet />
