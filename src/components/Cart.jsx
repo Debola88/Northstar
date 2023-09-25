@@ -1,16 +1,14 @@
 import React from 'react'
-import NavBar from './NavBar'
 import image from '../assets/img_1.png'
 import { IoClose } from "react-icons/io5";
 import { HiPlus } from "react-icons/hi";
 import { IoIosRemove } from "react-icons/io";
-import Footer from './Footer'
+
 
 
 function Cart() {
   return (
     <div>
-      <NavBar />
       <div className='px-10 sm:px-16 py-20'>
         <div className='flex uppercase text-left font-semibold text-sm cursor-pointer'>
           <span className='text-gray-500'>Home /</span>
@@ -61,7 +59,6 @@ function Cart() {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
