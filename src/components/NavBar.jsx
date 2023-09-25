@@ -2,13 +2,14 @@ import React from 'react'
 import { LuUser } from "react-icons/lu";
 import { BiArchive } from "react-icons/bi";
 import { FiMenu } from "react-icons/fi";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import { FaTimes } from "react-icons/fa"
 import { CiMenuFries } from "react-icons/ci";
 import { useState } from 'react';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BsInfoSquare } from "react-icons/bs";
 import { TiContacts } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
@@ -21,7 +22,7 @@ const NavBar = () => {
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiArchive /><span className='text-sm'>MESSAGES</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><FiMenu /><span className='text-sm'>MENU</span></Link></li>
       </ul>
     </div>
@@ -29,19 +30,19 @@ const NavBar = () => {
 
 
   return (
-    <nav className="bg-slate-100 top-0 left-0 w-full">
-      <div className="h-10vh flex justify-between lg:py-5 px-16 py-4">
+    <nav className="bg-slate-100 top-0 left-0 w-full fixed">
+      <div className="h-10vh flex justify-between lg:py-5 px-10 sm:px-16 py-4">
         <div className="flex items-center flex-1">
           <span className='text-3xl font-bold text-black'>NorthStar</span>
         </div>
         <div className='lg:flex md:flex lg:flex-1 items-center justify-end font-normal hidden'>
           <div className='flex-10'>
             <ul className='flex gap-8 mr-0 text-sm text-black'>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="#">HOME</Link></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="#">ABOUT</Link></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="#">CONTACT US</Link></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/">HOME</Link></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/about">ABOUT</Link></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/ContactUs">CONTACT US</Link></li>
               <li className='transition cursor-pointer ml-20'><Link spy={true} smooth={true} to="#"><LuUser /></Link></li>
-              <li className='transition cursor-pointer'> <Link spy={true} smooth={true} to="#"><BiArchive /></Link></li>
+              <li className='transition cursor-pointer'> <Link spy={true} smooth={true} to="/cart"><BiArchive /></Link></li>
               <li className='transition cursor-pointer'><Link spy={true} smooth={true} to="#"><FiMenu /></Link></li>
             </ul>
           </div>

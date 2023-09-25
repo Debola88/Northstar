@@ -4,6 +4,7 @@ import { RiVisaLine } from "react-icons/ri"
 import { BiLogoMastercard } from 'react-icons/bi';
 import { FaCcPaypal } from 'react-icons/fa6';
 import { FaDhl } from 'react-icons/fa6';
+import { IoIosArrowForward } from "react-icons/io";
 
 
 function Footer() {
@@ -39,7 +40,13 @@ function Footer() {
                         </ul>
                     </div>
                     <div className='mb-5 text-left'>
-                        <h3 className='uppercase font-bold pb-4 text-black'>Get in the know</h3>
+                        <h3 className='uppercase font-bold text-black'>Get in the know</h3>
+                        <div className="text-left">
+                            <form className='left-0 w-full space-y-4'>
+                                <input type="email" placeholder='Enter email' className='text-left w-60 h-12 text-black font-semibold border-b-[0.4px] bg-transparent border-b-gray-500 outline-none' />
+                                <span className='absolute text-xl cursor-pointer'><IoIosArrowForward /></span>
+                            </form>
+                        </div>
 
                     </div>
                 </div>
@@ -62,7 +69,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
