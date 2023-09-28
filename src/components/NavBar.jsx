@@ -17,11 +17,11 @@ const NavBar = () => {
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-20 ">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><Link spy={true} smooth={true} to="/" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/about" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/cart" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></Link></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><FiMenu /><span className='text-sm'>MENU</span></Link></li>
       </ul>
     </div>
@@ -29,7 +29,7 @@ const NavBar = () => {
 
 
   return (
-    <nav className="fixed bg-slate-100 top-0 left-0 w-full">
+    <nav className="fixed bg-slate-100 top-0 left-0 w-full md:shadow-lg">
       <div className="h-10vh flex justify-between lg:py-5 px-10 sm:px-16 py-4">
         <div className="flex items-center flex-1">
           <span className='text-3xl font-bold text-black'>NorthStar</span>
