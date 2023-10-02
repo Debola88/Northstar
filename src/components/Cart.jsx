@@ -36,6 +36,7 @@ function Cart() {
                     </div>
                     <div className='flex gap-10 max-sm:mt-4'>
                       <span className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'><HiPlus /></span>
+                      <span className='text-black sm:text-2xl text-xl'>1</span>
                       <span className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'><IoIosRemove /></span>
                     </div>
                   </div>

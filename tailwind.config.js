@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         'hero-image': "url('/src/assets/hero.jpg')",
         'buy-now': "url('/src/assets/unsplash.png')",
+      },
+      fontFamily: {
+        'montserrat': 'Montserrat',
       }
     },
   },

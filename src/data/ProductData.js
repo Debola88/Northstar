@@ -1,4 +1,4 @@
-export const ProductData = [
+const ProductData = [
   {
     id: 1,
     name: "Red Shirt",
@@ -6,6 +6,8 @@ export const ProductData = [
     description: "A red shirt - it's pretty red!",
     price: 29.99,
     discount: 16,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 79.99,
     discount: 14,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 49.99,
     discount: 33,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 4,
@@ -30,6 +36,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 29.99,
     discount: 33,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 29.99,
     discount: 33,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 6,
@@ -46,6 +56,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 59.99,
     discount: 45,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 7,
@@ -54,6 +66,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 59.99,
     discount: 45,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 8,
@@ -62,6 +76,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 69.99,
     discount: 33,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 9,
@@ -70,6 +86,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 49.99,
     discount: 33,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 10,
@@ -78,6 +96,8 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 59.99,
     discount: 13,
+    qty: 0,
+    status: 'In Stock'
   },
   {
     id: 11,
@@ -86,5 +106,9 @@ export const ProductData = [
     description: "A white shirt - it's pretty white!",
     price: 99.99,
     discount: 13,
+    qty: 0,
+    status: 'In Stock'
   },
 ]
+
+export default ProductData;
