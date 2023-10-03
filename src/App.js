@@ -8,6 +8,7 @@ import Selector from './components/Selector';
 import Cart from './components/Cart';
 import BillingDetails from './components/BillingDetails';
 import Layout from './components/Layout';
+import { CartProvider } from './contexts/CartContext';
 
 
 const routes =  createBrowserRouter(createRoutesFromElements(
@@ -23,7 +24,9 @@ const routes =  createBrowserRouter(createRoutesFromElements(
 
 function App() {
   return (
-    <RouterProvider router={routes} />  
+    <CartProvider>
+      <RouterProvider router={routes} />  
+    </CartProvider>
     )
   }
   
