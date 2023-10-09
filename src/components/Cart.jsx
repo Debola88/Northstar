@@ -15,7 +15,7 @@ function Cart() {
           <span> Shopping</span>
         </div>
         <div className='flex flex-col py-16'>
-          <div className='grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 max-w-[1240px] gap-x-10 text-center justify-center'>
+          <div className='grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-10 text-center justify-center'>
             <div className='col-span-2'>
               <div className='flex shadow-lg mb-10 p-5 rounded-md bg-white text-gray-700 w-auto min-h-[160px]'>
                 <div className='sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem] h-20 w-auto text-left'>

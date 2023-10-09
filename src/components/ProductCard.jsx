@@ -1,31 +1,41 @@
-import React from 'react'
+import { useContext } from 'react'
 import Box from '../assets/headphone.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
-function ProductCard () {
+import { CartContext } from '../contexts/CartContext'
+function ProductCard ({ productInfo }) {
+
+  const { addItemToCart } = useContext(CartContext)
+
+  const { id, name, image, price, description, discount } = productInfo
+  
+  const handleAddToCart = () => {
+    addItemToCart(productInfo)
+  }
+
   return (
     <div className='w-full'>
     <div className='bg-white text-gray-700 min-h-[10rem] shadow-lg rounded-md overflow-hidden'>
-      <img src={Box} alt='' className='w-full h-full object-cover' />
+      <img src={image} alt='' className='w-full h-full object-cover' />
       <div className='p-5 flex-col flex gap-3'>
         <div className='flex items-center gap-2'>
           <span className='px-3 py-3 rounded-full text-xs bg-gray-100 '>stock ready</span>
           <span className='px-3 py-3 rounded-full text-xs bg-gray-100 '>official store</span>
         </div>
         <h2 className="text-left font-semibold text-xl overflow-ellipsis overflow-hidden whitespace-nowrap text-black" title='Plain white shirt'>
-          Plain white shirt
+          {name}
         </h2>
         <div>
           <span className='text-lg font-bold'>
-            <h3 className='text-left'>$29.00</h3>
+            <h3 className='text-left'>${(price - (price * (discount / 100))).toFixed(2)}</h3>
           </span>
           <div className='flex items-center gap-2 mt-1' >
             <span className='text-sm text-slate-400 line-through'>
-              $49.00
+              ${price}
             </span>
             <span className='bg-green-500 px-1.5 py-0.5 rounded-md text-xs text-white uppercase font-bold'>
-              save 30%
+              save {discount}%
             </span>
           </div>
         </div>
@@ -39,9 +49,11 @@ function ProductCard () {
             20k reviews
           </span>
         </span>
-        <button className='bg-[#024E82] text-sm uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
+        <button className='bg-[#024E82] text-sm uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'
+
+        >
             Add to cart
-          </button>
+        </button>
       </div>
     </div>
   </div>
