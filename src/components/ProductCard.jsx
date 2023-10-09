@@ -39,6 +39,9 @@ function ProductCard () {
             20k reviews
           </span>
         </span>
+        <button className='bg-[#024E82] text-sm uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
+            Add to cart
+          </button>
       </div>
     </div>
   </div>

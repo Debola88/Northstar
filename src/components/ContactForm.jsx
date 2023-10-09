@@ -13,16 +13,16 @@ function ContactForm() {
                                 <div className='flex flex-col min-[1024px]:flex-row'>
                                     <div className='py-4'>
                                         <label className=''>Name</label>
-                                        <input type="text" className='text-left px-24 py-3 max-[1024px]:w-full outline-none' />
+                                        <input type="text" className='text-left px-24 py-3 max-[1024px]:w-full outline-none' required/>
                                     </div>
                                     <div className='py-4'>
                                         <label className=''>Email</label>
-                                        <input type="email" className='text-left px-24 py-3 max-[1024px]:w-full outline-none' />
+                                        <input type="email" className='text-left px-24 py-3 max-[1024px]:w-full outline-none' required/>
                                     </div>
                                 </div>
                                 <div className='left-0'>
                                     <label className='pr-4'>Message</label>
-                                    <textarea className='text-left w-full py-10 outline-none'/>
+                                    <textarea className='text-left w-full py-10 outline-none' required/>
                                 </div>
                             </form>
                         </div>

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BsInfoSquare } from "react-icons/bs";
 import { TiContacts } from "react-icons/ti";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
@@ -17,12 +17,12 @@ const NavBar = () => {
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-20 ">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><Link spy={true} smooth={true} to="/" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/about" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="/cart" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></Link></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><Link spy={true} smooth={true} to="#" className='flex gap-2'><FiMenu /><span className='text-sm'>MENU</span></Link></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="#" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/cart" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="#" className='flex gap-2'><FiMenu /><span className='text-sm'>MENU</span></NavLink></nav></li>
       </ul>
     </div>
   </>
@@ -37,12 +37,12 @@ const NavBar = () => {
         <div className='lg:flex md:flex lg:flex-1 items-center justify-end font-normal hidden'>
           <div className='flex-10'>
             <ul className='flex gap-8 mr-0 text-sm text-black'>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/">HOME</Link></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/about">ABOUT</Link></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><Link spy={true} smooth={true} to="/ContactUs">CONTACT US</Link></li>
-              <li className='transition cursor-pointer ml-20'><Link spy={true} smooth={true} to="#"><LuUser /></Link></li>
-              <li className='transition cursor-pointer'> <Link spy={true} smooth={true} to="/cart"><BiArchive /></Link></li>
-              <li className='transition cursor-pointer'><Link spy={true} smooth={true} to="#"><FiMenu /></Link></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/">HOME</NavLink></nav></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/about">ABOUT</NavLink></nav></li>
+              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/ContactUs">CONTACT US</NavLink></nav></li>
+              <li className='transition cursor-pointer ml-20'><nav><NavLink spy={true} smooth={true} to="#"><LuUser /></NavLink></nav></li>
+              <li className='transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/cart"><BiArchive /></NavLink></nav></li>
+              <li className='transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="#"><FiMenu /></NavLink></nav></li>
             </ul>
           </div>
         </div>

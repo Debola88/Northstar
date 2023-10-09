@@ -17,7 +17,6 @@ function NewProducts() {
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
       </div>
     </div>
   )
