@@ -9,6 +9,7 @@ import Cart from './components/Cart';
 import BillingDetails from './components/BillingDetails';
 import Layout from './components/Layout';
 import NoMatch from './components/NoMatch';
+import { CartProvider } from './contexts/CartContext';
 
 
 const routes = createBrowserRouter(createRoutesFromElements(
@@ -25,7 +26,9 @@ const routes = createBrowserRouter(createRoutesFromElements(
 
 function App() {
   return (
-    <RouterProvider router={routes} />
+    <CartProvider>
+      <RouterProvider router={routes} />
+    </CartProvider>
   )
 }
 
