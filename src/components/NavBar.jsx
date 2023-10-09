@@ -1,7 +1,6 @@
 import React from 'react'
 import { LuUser } from "react-icons/lu";
 import { BiArchive } from "react-icons/bi";
-import { FiMenu } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { useState } from 'react';
@@ -16,12 +15,12 @@ const NavBar = () => {
 
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
-      <ul className="text-sm font-semibold text-left px-20 ">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/user" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/cart" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></NavLink></nav></li>
+      <ul className="text-sm font-semibold text-left px-10 ">
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg border-t'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2'><span className='text-sm'>HOME</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2'><span className='text-sm'> ABOUT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/user" className='flex gap-2'><span className='text-sm'> ACCOUNT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/cart" className='flex gap-2'><span className='text-sm'>Cart</span></NavLink></nav></li>
       </ul>
     </div>
   </>
@@ -47,7 +46,7 @@ const NavBar = () => {
         <div>
           {click && content}
         </div>
-        <button className='block md:hidden transition' onClick={handleClick}>
+        <button className='block md:hidden transition text-xl' onClick={handleClick}>
           {click ? <FaTimes /> : <CiMenuFries />}
         </button>
       </div>

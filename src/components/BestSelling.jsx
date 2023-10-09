@@ -1,8 +1,4 @@
 import React from 'react'
-import box from '../assets/headphone.jpg'
-import { BsStarFill } from 'react-icons/bs'
-import { BsStarHalf } from 'react-icons/bs'
-import { BsStar } from 'react-icons/bs'
 import ProductCard from './ProductCard'
 import { CartContext } from '../contexts/CartContext'
 import { useContext } from 'react'

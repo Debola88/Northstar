@@ -4,7 +4,6 @@ import About from './components/About';
 import HomePage from './components/HomePage';
 import ContactUs from './components/ContactUs';
 import Product from './components/Product';
-import Selector from './components/Selector';
 import Cart from './components/Cart';
 import BillingDetails from './components/BillingDetails';
 import Layout from './components/Layout';

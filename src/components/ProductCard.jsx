@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import Box from '../assets/headphone.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
