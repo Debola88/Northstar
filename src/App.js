@@ -19,6 +19,7 @@ const routes = createBrowserRouter(createRoutesFromElements(
     <Route path='contactus' element={<ContactUs />} />
     <Route path='cart' element={<Cart />} />
     <Route path='product' element={<Product />} />
+    <Route path='billingdetails' element={<BillingDetails />} />
     <Route path='*' element={<NoMatch />} />
   </Route>
 ))

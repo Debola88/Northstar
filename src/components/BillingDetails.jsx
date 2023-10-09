@@ -5,7 +5,6 @@ import Footer from './Footer'
 function BillingDetails() {
     return (
         <div>
-            <NavBar />
             <div className='px-10 sm:px-16 py-20'>
                 <div className='flex uppercase text-left font-semibold text-sm cursor-pointer'>
                     <span className='text-gray-500'>Home /</span>
@@ -68,7 +67,6 @@ function BillingDetails() {
                     </button>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

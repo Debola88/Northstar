@@ -7,8 +7,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-image': "url('/src/assets/hero.jpg')",
+        'hero-image': "url('/src/assets/hero.png')",
         'buy-now': "url('/src/assets/unsplash.png')",
+        'buy-later': "url('/src/assets/unsplash-2.png')",
       }
     },
   },

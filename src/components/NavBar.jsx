@@ -20,9 +20,8 @@ const NavBar = () => {
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2'><BiHomeAlt2 /><span className='text-sm'>HOME</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2'><BsInfoSquare /><span className='text-sm'> ABOUT</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><TiContacts /><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="#" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/user" className='flex gap-2'><LuUser /><span className='text-sm'> ACCOUNT</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/cart" className='flex gap-2'><BiArchive /><span className='text-sm'>Cart</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="#" className='flex gap-2'><FiMenu /><span className='text-sm'>MENU</span></NavLink></nav></li>
       </ul>
     </div>
   </>
@@ -40,9 +39,8 @@ const NavBar = () => {
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/">HOME</NavLink></nav></li>
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/about">ABOUT</NavLink></nav></li>
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/ContactUs">CONTACT US</NavLink></nav></li>
-              <li className='transition cursor-pointer ml-20'><nav><NavLink spy={true} smooth={true} to="#"><LuUser /></NavLink></nav></li>
+              <li className='transition cursor-pointer ml-20'><nav><NavLink spy={true} smooth={true} to="/user"><LuUser /></NavLink></nav></li>
               <li className='transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/cart"><BiArchive /></NavLink></nav></li>
-              <li className='transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="#"><FiMenu /></NavLink></nav></li>
             </ul>
           </div>
         </div>

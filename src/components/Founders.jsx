@@ -1,5 +1,10 @@
 import React from 'react'
+import Founderone from '../assets/Founder1.png'
+import Foundertwo from '../assets/Founder2.png'
+import Founderthree from '../assets/Founder3.png'
 import FounderFour from '../assets/Founder4.png'
+
+
 
 function Founders() {
     return (
@@ -10,7 +15,7 @@ function Founders() {
                     <div className='grid gap-14 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1'>
                         <div>
                             <div className='min-h-[10rem] w-auto overflow-hidden'>
-                                <img src={FounderFour} alt='' className='w-full h-full object-cover' />
+                                <img src={Founderone} alt='' className='w-full h-full object-cover' />
                             </div>
                             <div className='text-black py-5 font-bold text-left'>
                                 <p>HM Jawad</p>
@@ -18,7 +23,7 @@ function Founders() {
                         </div>
                         <div>
                             <div className='min-h-[10rem] w-auto overflow-hidden'>
-                                <img src={FounderFour} alt='' className='w-full h-full object-cover' />
+                                <img src={Foundertwo} alt='' className='w-full h-full object-cover' />
                             </div>
                             <div className='text-black py-5 font-bold text-left'>
                                 <p>Furqan Abid</p>
@@ -26,7 +31,7 @@ function Founders() {
                         </div>
                         <div>
                             <div className='min-h-[10rem] w-auto overflow-hidden'>
-                                <img src={FounderFour} alt='' className='w-full h-full object-cover' />
+                                <img src={Founderthree} alt='' className='w-full h-full object-cover' />
                             </div>
                             <div className='text-black py-5 font-bold text-left'>
                                 <p>Abdullah Ah</p>
