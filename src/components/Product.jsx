@@ -16,18 +16,6 @@ function Product() {
                             <div className='min-h-[200px] overflow-hidden'>
                                 <img src={image} alt='' className='w-auto lg:h-[650px]' />
                             </div>
-                            <div className='flex flex-col items-left justify-center pt-5'>
-                                <div className='grid gap-5 grid-cols-4 overflow-hidden'>
-                                    <div className='min-h-[10rem] w-[auto] overflow-hidden bg-gray-300'>
-                                    </div>
-                                    <div className='min-h-[10rem] w-[auto] overflow-hidden  bg-gray-200'>
-                                    </div>
-                                    <div className='min-h-[10rem] w-[auto] overflow-hidden  bg-gray-200'>
-                                    </div>
-                                    <div className='min-h-[10rem] w-[auto] overflow-hidden  bg-gray-200'>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div>
                             <div className="flex-1">
