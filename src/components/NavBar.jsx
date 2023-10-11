@@ -1,17 +1,19 @@
-import React from 'react'
+import { useContext } from 'react'
 import { LuUser } from "react-icons/lu";
 import { BiArchive } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
 import { useState } from 'react';
-import { BiHomeAlt2 } from "react-icons/bi";
-import { BsInfoSquare } from "react-icons/bs";
-import { TiContacts } from "react-icons/ti";
+// import { BiHomeAlt2 } from "react-icons/bi";
+// import { BsInfoSquare } from "react-icons/bs";
+// import { TiContacts } from "react-icons/ti";
 import { NavLink } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const {totalQuantity} = useContext(CartContext)
 
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
@@ -40,7 +42,7 @@ const NavBar = () => {
           <nav className='flex justify-end'>
             <NavLink spy={true} smooth={true} to="/cart">
               <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
-                <p className="text-xs text-white">0</p>
+                <p className="text-xs text-white">{totalQuantity}</p>
               </span>
               <BiArchive />
             </NavLink>
@@ -58,7 +60,7 @@ const NavBar = () => {
                 <nav className='flex'>
                   <NavLink spy={true} smooth={true} to="/cart">
                     <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
-                      <p className="text-xs text-white">0</p>
+                      <p className="text-xs text-white">{totalQuantity}</p>
                     </span>
                     <BiArchive />
                   </NavLink>

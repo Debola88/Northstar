@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 
 
 // Context is created by defining the functions and state to be used within the context
@@ -63,11 +63,22 @@ const deleteCartItem = (cartItems, cartItemToDelete) => {
 // When creating the provider, pass the state values and functions that will be used as if they will affect the state. so in the end the functions have to either set state or not.
 export const CartProvider = ({ children }) => {
   const [shopProducts, setShopProducts] = useState([]);
-
-  const [cartItems, setCartItems] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [cartItems, setCartItems] = useState( 
+    () => {
+      const storedCartItems = localStorage.getItem('cartItems') || '[]';
+      if (storedCartItems) {
+        const parsedValue = JSON.parse(storedCartItems);
+        return parsedValue;
+      }
+      return [];
+    }
+  );
   
+
+
+
   // useEffect to get the shop products
   useEffect(() => {
     const fetchShopProducts = async () => {
@@ -83,18 +94,20 @@ export const CartProvider = ({ children }) => {
     fetchShopProducts();
   }, []);
 
-  // This useEffect will run everytime a product is added or removed from the cart, hence the dependency array [cartItems]
 
+  // function to store the cart items in local storage
   useEffect(() => {
-    const newTotalPrice = cartItems.reduce((total, item) =>  total + item.quantity * item.price, 0);
-    setTotalPrice(newTotalPrice);
+    const storeCartItems = () => localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    storeCartItems();
+  }, [cartItems]);
+  
+  // This useMemo will run everytime a product is added or removed from the cart, hence the dependency array [cartItems]
+  useMemo(() => {
+    setTotalQuantity(cartItems.reduce((total, item) => total + item.quantity, 0));
+    setTotalPrice(cartItems.reduce((total, item) =>  total + item.quantity * item.price, 0));
   }, [cartItems]);
 
 
-  useEffect(() => {
-    const newTotalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-    setTotalQuantity(newTotalQuantity);
-  }, [cartItems]);
 
   const addItemToCart = (itemToAdd) => {
     setCartItems(addCartItem(cartItems, itemToAdd));
