@@ -5,13 +5,15 @@ import { BsStar } from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext'
 function ProductCard ({ productInfo }) {
 
-  const { addItemToCart } = useContext(CartContext)
+  const { addItemToCart, cartItems } = useContext(CartContext)
 
-  const { id, name, image, price, description, discount } = productInfo
+  const { name, image, price, description, discount } = productInfo
   
-  const handleAddToCart = () => {
-    addItemToCart(productInfo)
+  const handleAddToCart = (product) => {
+    addItemToCart(product)
   }
+
+  console.log(cartItems)
 
   return (
     <div className='w-full'>
@@ -27,11 +29,11 @@ function ProductCard ({ productInfo }) {
         </h2>
         <div>
           <span className='text-lg font-bold'>
-            <h3 className='text-left'>${(price - (price * (discount / 100))).toFixed(2)}</h3>
+            <h3 className='text-left'>{(price - (price * (discount / 100))).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</h3>
           </span>
           <div className='flex items-center gap-2 mt-1' >
             <span className='text-sm text-slate-400 line-through'>
-              ${price}
+              {price.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
             </span>
             <span className='bg-green-500 px-1.5 py-0.5 rounded-md text-xs text-white uppercase font-bold'>
               save {discount}%
@@ -48,9 +50,7 @@ function ProductCard ({ productInfo }) {
             20k reviews
           </span>
         </span>
-        <button className='bg-[#024E82] text-sm uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'
-
-        >
+        <button onClick={() => handleAddToCart(productInfo)} className='bg-[#024E82] text-sm uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
             Add to cart
         </button>
       </div>
