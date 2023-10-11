@@ -12,9 +12,7 @@ function ProductCard ({ productInfo }) {
   const handleAddToCart = (product) => {
     addItemToCart(product)
   }
-
-  console.log(cartItems)
-
+  
   return (
     <div className='w-full'>
     <div className='bg-white text-gray-700 min-h-[10rem] shadow-lg rounded-md overflow-hidden'>
