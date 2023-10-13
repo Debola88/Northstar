@@ -7,7 +7,7 @@ import { FaArrowRotateLeft } from 'react-icons/fa6'
 function Benefit() {
     return (
         <div >
-            <div className='flex min-w-full flex-col items-center justify-center px-16 py-16'>
+            <div className='flex min-w-full flex-col items-center justify-center px-10 sm:px-16 py-16'>
                 <div className='grid gap-32 sm:grid-cols-2 lg:grid-cols-4 '>
                     <div className='flex gap-6'>
                         <span className='text-2xl text-[#024E82]'><FaTruckFast /></span>

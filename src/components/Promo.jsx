@@ -2,7 +2,7 @@ import React from 'react'
 
 function Promo() {
   return (
-    <div className='px-16'>
+    <div className='px-10 sm:px-16'>
       <div className='flex flex-col justify-between'>
         <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10'>
           <div className='bg-black text-gray-700 w-auto min-h-[300px] overflow-hidden p-20 max-sm:p-14 '>
