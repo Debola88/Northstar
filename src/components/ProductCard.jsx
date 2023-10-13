@@ -56,10 +56,9 @@ function ProductCard({ productInfo }) {
               20k reviews
             </span>
           </span>
-          <SnackbarProvider
-            autoHideDuration={5000} variant="success" />
+          <SnackbarProvider variant="success" />
           <button onClick={() => {
-            handleAddToCart(productInfo); enqueueSnackbar('Successfully added to cart!', {autoHideDuration: 2000}, { variant: 'success' })
+            handleAddToCart(productInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
           }} className='bg-[#024E82] text-xs uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
             Add to cart
           </button>

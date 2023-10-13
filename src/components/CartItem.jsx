@@ -3,6 +3,9 @@ import { IoClose } from "react-icons/io5";
 import { HiPlus } from "react-icons/hi";
 import { IoIosRemove } from "react-icons/io";
 import { CartContext } from '../contexts/CartContext';
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+
+
 const CartItem = ({ cartItemInfo }) => {
   const { addItemToCart, removeItemFromCart, deleteItemFromCart } = useContext(CartContext);
   const { image, name, price, quantity } = cartItemInfo;
@@ -14,12 +17,17 @@ const CartItem = ({ cartItemInfo }) => {
       </div>
       <div className=' w-full ml-2'>
         <div className='flex justify-between items-start'>
-          <h2 className='text-black font-semibold text-xl md:text-2xl sm:text-base'>{name}</h2>
+          <h2 className='text-black font-semibold text- md:text-2xl sm:text-base'>{name}</h2>
           <div className='flex'>
-            <span 
+            <SnackbarProvider
+              autoHideDuration={5000} variant="success" />
+            <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
-              onClick={() => deleteItemFromCart(cartItemInfo)}
+              onClick={() => {
+                deleteItemFromCart(cartItemInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
+              }}
             >
+
               <IoClose />
             </span>
           </div>
@@ -27,18 +35,18 @@ const CartItem = ({ cartItemInfo }) => {
         </div>
         <div className=' flex flex-col justify-between sm:flex-row sm:mt-12 sm:ml-2'>
           <div className='sm:flex flex-none text-left'>
-            <div className='text-base font-semibold text-black mr-4'>Qty : <span className=''>{quantity}</span></div>
+            <div className='text-base max-sm: font-semibold text-black mr-4'>Qty : <span className=''>{quantity}</span></div>
             <div className='text-base font-semibold text-black'>Price : <span className=''>{(price * quantity).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span></div>
           </div>
           <div className='flex gap-10 max-sm:mt-4'>
-            <span 
+            <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
               onClick={() => addItemToCart(cartItemInfo)}
             >
               <HiPlus />
             </span>
-            <span 
-              className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl' 
+            <span
+              className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
               onClick={() => removeItemFromCart(cartItemInfo)}
             >
               <IoIosRemove />

@@ -10,10 +10,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 
+
 const NavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const {totalQuantity} = useContext(CartContext)
+
 
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
