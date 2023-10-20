@@ -20,16 +20,16 @@ const NavBar = () => {
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-[4.5rem]">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg border-t'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2'><span className='text-sm'>HOME</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2'><span className='text-sm'> ABOUT</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2'><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg border-t'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2' onClick={handleClick}><span className='text-sm'>HOME</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2' onClick={handleClick}><span className='text-sm'> ABOUT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2' onClick={handleClick}><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
       </ul>
     </div>
   </>
 
 
   return (
-    <nav className="fixed bg-slate-100 top-0 left-0 w-full md:shadow-lg">
+    <nav className="fixed bg-slate-100 top-0 left-0 w-full md:shadow-lg z-50">
       <div className="flex justify-between lg:py-5 px-10 sm:px-16 py-4 ">
         <div className='flex gap-3 items-center'>
           <button className='block md:hidden transition text-xl' onClick={handleClick}>

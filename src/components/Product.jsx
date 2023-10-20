@@ -37,8 +37,8 @@ function Product() {
                                     (15)
                                 </span>
                             </span>
-                            <div className='py-2 flex items-center gap-4 mt-1 text-3xl max-md:xl' >
-                                <span className='line-through opacity-50'>
+                            <div className='py-2 flex items-center gap-4 mt-1 text-xl max-md:xl' >
+                                <span className='line-through text-gray-400'>
                                     $49.00
                                 </span>
                                 <span className=' text-[#024E82]'>
@@ -47,7 +47,7 @@ function Product() {
                             </div>
                             <p className='text-gray-600 text-left text-lg font-semibold py-4'>A classic t-shirt never goes out of style. This is our most premium collection of
                                 shirt. This plain white shirt is made up of pure cotton and has a premium finish.</p>
-                            <div className='text-left py-4'>
+                            <div className='text-left py-3'>
                                 <Selector />
                             </div>
 
