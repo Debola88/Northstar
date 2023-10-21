@@ -10,7 +10,7 @@ function Founders() {
     return (
         <div className='pb-16'>
             <h1 className='p-16 mb-16 font-bold text-3xl text-black'>The Founders</h1>
-            <div className='px-16'>
+            <div className='px-5 sm:px-16'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='grid gap-14 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1'>
                         <div>

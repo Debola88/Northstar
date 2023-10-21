@@ -19,8 +19,8 @@ const NavBar = () => {
 
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
-      <ul className="text-sm font-semibold text-left px-[4.5rem]">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg border-t'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2' onClick={handleClick}><span className='text-sm'>HOME</span></NavLink></nav></li>
+      <ul className="text-sm font-semibold text-left px-[3.5rem]">
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink spy={true} smooth={true} to="/" className='flex gap-2' onClick={handleClick}><span className='text-sm'>HOME</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/about" className='flex gap-2' onClick={handleClick}><span className='text-sm'> ABOUT</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink spy={true} smooth={true} to="/ContactUs" className='flex gap-2' onClick={handleClick}><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
       </ul>
@@ -30,7 +30,7 @@ const NavBar = () => {
 
   return (
     <nav className="fixed bg-slate-100 top-0 left-0 w-full md:shadow-lg z-50">
-      <div className="flex justify-between lg:py-5 px-10 sm:px-16 py-4 ">
+      <div className="flex justify-between lg:py-5 px-5 sm:px-16 py-4 ">
         <div className='flex gap-3 items-center'>
           <button className='block md:hidden transition text-xl' onClick={handleClick}>
             {click ? <FaTimes /> : <CiMenuBurger />}
@@ -40,13 +40,13 @@ const NavBar = () => {
           </div>
         </div>
         <div className='text-lg flex gap-5 ml-auto justify-end items-center md:hidden'>
-          <nav><NavLink spy={true} smooth={true} to="/user"><LuUser /></NavLink></nav>
+          <nav><NavLink spy={true} smooth={true} to="/user"><LuUser className='text-lg'/></NavLink></nav>
           <nav className='flex justify-end'>
             <NavLink spy={true} smooth={true} to="/cart">
               <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
                 <p className="text-xs text-white">{totalQuantity}</p>
               </span>
-              <BiArchive />
+              <BiArchive className='text-lg'/>
             </NavLink>
           </nav>
         </div>
@@ -57,14 +57,14 @@ const NavBar = () => {
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/">HOME</NavLink></nav></li>
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/about">ABOUT</NavLink></nav></li>
               <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink spy={true} smooth={true} to="/ContactUs">CONTACT US</NavLink></nav></li>
-              <li className='transition cursor-pointer ml-20'><nav><NavLink spy={true} smooth={true} to="/user"><LuUser /></NavLink></nav></li>
+              <li className='transition cursor-pointer ml-20'><nav><NavLink spy={true} smooth={true} to="/user"><LuUser className='text-xl'/></NavLink></nav></li>
               <li className='transition cursor-pointer'>
                 <nav className='flex'>
                   <NavLink spy={true} smooth={true} to="/cart">
                     <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
                       <p className="text-xs text-white">{totalQuantity}</p>
                     </span>
-                    <BiArchive />
+                    <BiArchive className='text-xl'/>
                   </NavLink>
                 </nav>
               </li>

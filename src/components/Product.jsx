@@ -9,7 +9,7 @@ import { MdOutlineEmail } from 'react-icons/md'
 function Product() {
     return (
         <div>
-            <div className='p-16 w-full'>
+            <div className='px-5 sm:px-16 py-16 w-full'>
                 <div className='flex flex-col justify-between'>
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8'>
                         <div>

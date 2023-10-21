@@ -9,7 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function Footer() {
     return (
-        <div className='bg-gray-200 text-gray-500 pt-10 text-sm px-10 sm:px-16'>
+        <div className='bg-gray-200 text-gray-500 pt-10 text-sm px-5 sm:px-16'>
             <div className='max-w-7xl mx-auto'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center'>
                     <div className='mb-5 text-left'>

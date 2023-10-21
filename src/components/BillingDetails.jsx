@@ -4,7 +4,7 @@ import React from 'react'
 function BillingDetails() {
     return (
         <div>
-            <div className='px-10 sm:px-16 py-20'>
+            <div className='px-5 sm:px-16 py-20'>
                 <div className='flex uppercase text-left font-semibold text-sm cursor-pointer'>
                     <span className='text-gray-500'>Home /</span>
                     <span> CHECKOUT</span>

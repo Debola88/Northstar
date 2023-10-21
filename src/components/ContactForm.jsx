@@ -3,7 +3,7 @@ import React from 'react'
 function ContactForm() {
     return (
         <div>
-            <div className="px-16 py-32">
+            <div className="px-5 sm:px-16 py-32">
                 <div className='flex flex-col min-[900px]:flex-row gap-10 justify-between'>
                     <div className='text-left basis-[62%] overflow-hidden text-[#555555]'>
                         <h2 className='lg:text-4xl text-[#3A3939] font-bold md:text-3xl sm:text-3xl'>We would love to hear from you.</h2>
@@ -12,15 +12,15 @@ function ContactForm() {
                             <form className='w-full space-y-4'>
                                 <div className='flex flex-col min-[1024px]:flex-row gap-x-10 w-full'>
                                     <div className='py-2 w-full'>
-                                        <input type="text" className='py-3 w-full outline-none' placeholder='Name' required/>
+                                        <input type="text" className='py-3 pl-2 w-full outline-none' placeholder='Name' required/>
                                     </div>
                                     <div className='py-2 w-full'>
-                                        <input type="email" className='py-3 w-full outline-none' placeholder='Email' required/>
+                                        <input type="email" className='py-3 w-full pl-2 outline-none' placeholder='Email' required/>
                                     </div>
                                 </div>
                                 <div className='left-0'>
                                     <label className='pr-4'>Message</label>
-                                    <textarea className='text-left w-full h-40 outline-none' required/>
+                                    <textarea className='text-left w-full h-40 outline-none p-2' required/>
                                 </div>
                             </form>
                         </div>

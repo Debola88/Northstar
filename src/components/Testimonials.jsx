@@ -6,7 +6,7 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 
 function Testimonials() {
     return (
-        <div className='px-16 max-sm:px-5 py-10 bg-white'>
+        <div className='px-5 sm:px-16 py-10 bg-white'>
             <h1 className='text-4xl font-bold text-black'>Testimonials</h1>
             <div className='p-16'>
                 <div className='flex flex-col  sm:flex-row gap-x-10 items-center justify-center mx-auto pb-20'>

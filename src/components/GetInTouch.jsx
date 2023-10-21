@@ -2,7 +2,7 @@ import React from 'react'
 
 function GetInTouch() {
     return (
-        <div className="px-16 py-32">
+        <div className="px-5 sm:px-16 py-32">
             <div className='flex flex-col justify-between'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-32'>
                     <div className='text-center justify-center text-[#3A3939]  overflow-hidden'>
