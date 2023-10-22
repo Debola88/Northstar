@@ -1,9 +1,12 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext'
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 
 function ProductCard({ productInfo }) {
@@ -18,9 +21,12 @@ function ProductCard({ productInfo }) {
 
   // this specific snackbar will disappear after 3 seconds
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   return (
-    <div className='w-full'>
+    <div className='w-full'  data-aos="fade-up">
       <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden'>
         <div className='h-48'>
           <img src={image} alt='' className='w-full h-full object-cover' />

@@ -1,6 +1,14 @@
 import React from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 function ContactForm() {
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     return (
         <div>
             <div className="px-5 sm:px-16 py-32">
@@ -8,19 +16,19 @@ function ContactForm() {
                     <div className='text-left basis-[62%] overflow-hidden text-[#555555]'>
                         <h2 className='lg:text-4xl text-[#3A3939] font-bold md:text-3xl sm:text-3xl'>We would love to hear from you.</h2>
                         <h3 className='py-8'>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</h3>
-                        <div className=" ">
+                        <div className=" " data-aos="zoom-in-up">
                             <form className='w-full space-y-4'>
                                 <div className='flex flex-col min-[1024px]:flex-row gap-x-10 w-full'>
                                     <div className='py-2 w-full'>
-                                        <input type="text" className='py-3 pl-2 w-full outline-none' placeholder='Name' required/>
+                                        <input type="text" className='py-3 pl-2 w-full outline-none' placeholder='Name' required />
                                     </div>
                                     <div className='py-2 w-full'>
-                                        <input type="email" className='py-3 w-full pl-2 outline-none' placeholder='Email' required/>
+                                        <input type="email" className='py-3 w-full pl-2 outline-none' placeholder='Email' required />
                                     </div>
                                 </div>
                                 <div className='left-0'>
                                     <label className='pr-4'>Message</label>
-                                    <textarea className='text-left w-full h-40 outline-none p-2' required/>
+                                    <textarea className='text-left w-full h-40 outline-none p-2' required />
                                 </div>
                             </form>
                         </div>
