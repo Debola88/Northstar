@@ -8,8 +8,7 @@ function Selector() {
 
 
   return (
-    <div className=''>
-      <div className='relative flex flex-col items-center w-[220px] '>
+      <div className='relative flex flex-col items-center w-[220px] max-sm:w-[200px]'>
         <button onClick={() => setIsOpen((prev) => !prev)} className="bg-gray-200 p-4 w-full flex items-center justify-between font-semibold text-lg tracking-wider border-4 active:border-white duration-300 active:text-white">Select Size
           {!isOpen ? (
             <MdOutlineKeyboardArrowDown className="h-6 w-auto" />
@@ -29,8 +28,6 @@ function Selector() {
           </div>
         )}
       </div>
-    </div>
-
   )
 }
 export default Selector

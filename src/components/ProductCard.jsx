@@ -31,7 +31,7 @@ function ProductCard({ productInfo }) {
       <SnackbarProvider variant="success" />
       <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden' data-aos="fade-up">
         <div className='h-48'>
-          <img src={image} alt='' className='w-full h-full object-cover' />
+          <img src={image} alt={image} className='w-full h-full object-cover cursor-pointer' />
         </div>
         <div className='p-5 flex-col flex gap-2'>
           <div className='flex items-center gap-2'>

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { IoClose } from "react-icons/io5";
-import { HiPlus } from "react-icons/hi";
+import { IoIosAdd } from 'react-icons/io'
+import { IoIosClose } from 'react-icons/io'
 import { IoIosRemove } from "react-icons/io";
 import { CartContext } from '../contexts/CartContext';
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
@@ -23,7 +23,7 @@ const CartItem = ({ cartItemInfo }) => {
             <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
               onClick={() => { enqueueSnackbar('Your Product is deleted!', { variant: 'success' }, { autoHideDuration: 2000 }); deleteItemFromCart(cartItemInfo) }} >
-              <IoClose />
+              <IoIosClose />
             </span>
           </div>
 
@@ -38,7 +38,7 @@ const CartItem = ({ cartItemInfo }) => {
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
               onClick={() => addItemToCart(cartItemInfo)}
             >
-              <HiPlus />
+              <IoIosAdd />
             </span>
             <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
