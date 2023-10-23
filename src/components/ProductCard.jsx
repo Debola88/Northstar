@@ -3,9 +3,9 @@ import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext'
-import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 
 
@@ -26,8 +26,10 @@ function ProductCard({ productInfo }) {
   }, [])
 
   return (
-    <div className='w-full'  data-aos="fade-up">
-      <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden'>
+
+    <div className='w-full'>
+      <SnackbarProvider variant="success" />
+      <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden' data-aos="fade-up">
         <div className='h-48'>
           <img src={image} alt='' className='w-full h-full object-cover' />
         </div>
@@ -62,7 +64,6 @@ function ProductCard({ productInfo }) {
               20k reviews
             </span>
           </span>
-          <SnackbarProvider variant="success" />
           <button onClick={() => {
             handleAddToCart(productInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
           }} className='bg-[#024E82] text-xs uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>

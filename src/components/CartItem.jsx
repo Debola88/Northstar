@@ -12,6 +12,7 @@ const CartItem = ({ cartItemInfo }) => {
 
   return (
     <div className='flex items-center shadow-lg mb-10 p-5 rounded-md text-gray-700 w-auto min-h-[160px]'>
+      <SnackbarProvider />
       <div className='sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem] h-20 w-auto text-left'>
         <img src={image} alt='' className='w-auto h-full object-cover' />
       </div>
@@ -19,15 +20,9 @@ const CartItem = ({ cartItemInfo }) => {
         <div className='flex justify-between items-start'>
           <h2 className='text-black font-semibold text- md:text-2xl sm:text-base'>{name}</h2>
           <div className='flex'>
-            <SnackbarProvider
-              autoHideDuration={5000} variant="success" />
             <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
-              onClick={() => {
-                deleteItemFromCart(cartItemInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
-              }}
-            >
-
+              onClick={() => { enqueueSnackbar('Your Product is deleted!', { variant: 'success' }, { autoHideDuration: 2000 }); deleteItemFromCart(cartItemInfo) }} >
               <IoClose />
             </span>
           </div>
