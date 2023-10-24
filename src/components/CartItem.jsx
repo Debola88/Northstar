@@ -33,7 +33,7 @@ const CartItem = ({ cartItemInfo }) => {
             <div className='text-base max-sm: font-semibold text-black mr-4'>Qty : <span className=''>{quantity}</span></div>
             <div className='text-base font-semibold text-black'>Price : <span className=''>{(price * quantity).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span></div>
           </div>
-          <div className='flex gap-10 max-sm:mt-4'>
+          <div className='flex gap-10 justify-between max-sm:mt-4'>
             <span
               className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
               onClick={() => addItemToCart(cartItemInfo)}

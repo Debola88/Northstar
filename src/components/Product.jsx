@@ -55,9 +55,9 @@ function Product() {
                                 </span>
                                 <span className='justify-center items-center text-center'>{count}</span>
                                 <span
-                                    className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
+                                    className={`${count === 0 ? 'pointer-events-none':''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
                                     onClick={() => (setCount(count - 1))} >
-                                    <IoIosRemove />
+                                    <IoIosRemove/>
                                 </span>
                             </div>
                             <div className='text-left left-0 py-4'>
