@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Selector from './Selector'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { MdOutlineEmail } from 'react-icons/md'
+import { IoIosRemove } from 'react-icons/io'
+import { IoIosAdd } from 'react-icons/io'
 import { useLocation } from 'react-router-dom'
 
 const Product = () => {
@@ -13,6 +15,9 @@ const Product = () => {
     const productInfo = location.state
 
     const { name, image, description, price, discount, id,  } = productInfo
+
+    const [count, setCount] = useState(0)
+
     return (
         <div>
             <div className='px-5 sm:px-16 py-16 w-full'>
@@ -24,16 +29,8 @@ const Product = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="flex-1">
-                                <ul className='flex font-semibold gap-4 uppercase text-lg max-md:text-base text-gray-500' >
-                                    <li>Home </li>
-                                    <li>shop </li>
-                                    <li>women</li>
-                                    <li className='text-black'>shop</li>
-                                </ul>
-                            </div>
-                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>{name}</h2>
-                            <span className='py-4 flex items-center mt-1 gap-1 text-yellow-500'>
+                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>Plain White Shirt</h2>
+                            <span className='py-2 flex items-center mt-1 gap-1 text-yellow-500'>
                                 <BsStarFill />
                                 <BsStarFill />
                                 <BsStarFill />
@@ -55,7 +52,19 @@ const Product = () => {
                             <div className='text-left py-3'>
                                 <Selector />
                             </div>
-
+                            <div className='flex gap-10 max-sm:mt-4'>
+                                <span
+                                    className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
+                                    onClick={() => (setCount(count + 1))} >
+                                    <IoIosAdd />
+                                </span>
+                                <span className='justify-center items-center text-center'>{count}</span>
+                                <span
+                                    className={`${count === 0 ? 'pointer-events-none':''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
+                                    onClick={() => (setCount(count - 1))} >
+                                    <IoIosRemove/>
+                                </span>
+                            </div>
                             <div className='text-left left-0 py-4'>
                                 <button className='bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'>
                                     ADD TO CART

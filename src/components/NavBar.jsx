@@ -30,7 +30,7 @@ const NavBar = () => {
 
   return (
     <nav className="fixed bg-slate-100 top-0 left-0 w-full md:shadow-lg z-50">
-      <div className="flex justify-between lg:py-5 px-5 sm:px-16 py-4 ">
+      <div className="h-[10hv] flex justify-between lg:py-5 px-5 sm:px-16 py-4 ">
         <div className='flex gap-3 items-center'>
           <button className='block md:hidden transition text-xl' onClick={handleClick}>
             {click ? <FaTimes /> : <CiMenuBurger />}
@@ -52,19 +52,19 @@ const NavBar = () => {
         </div>
 
         <div className='lg:flex md:flex lg:flex-1 items-center justify-end font-normal hidden'>
-          <div className='flex-10'>
+          <div className=''>
             <ul className='flex gap-8 mr-0 text-sm text-black'>
-              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink to="/">HOME</NavLink></nav></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink to="/about">ABOUT</NavLink></nav></li>
-              <li className='hover:text-blue-800 transition cursor-pointer'><nav><NavLink to="/ContactUs">CONTACT US</NavLink></nav></li>
-              <li className='transition cursor-pointer ml-20'><nav><NavLink  to="/user"><LuUser className='text-xl'/></NavLink></nav></li>
+              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/">HOME</NavLink></nav></li>
+              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/about">ABOUT</NavLink></nav></li>
+              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/ContactUs">CONTACT US</NavLink></nav></li>
+              <li className='transition cursor-pointer ml-20'><nav><NavLink  to="/user"><LuUser className='text-lg'/></NavLink></nav></li>
               <li className='transition cursor-pointer'>
                 <nav className='flex'>
                   <NavLink  to="/cart">
                     <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
                       <p className="text-xs text-white">{totalQuantity}</p>
                     </span>
-                    <BiArchive className='text-xl'/>
+                    <BiArchive className='text-lg'/>
                   </NavLink>
                 </nav>
               </li>

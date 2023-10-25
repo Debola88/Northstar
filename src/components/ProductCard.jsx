@@ -1,9 +1,12 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+
 import { Link } from 'react-router-dom'
 
 
@@ -19,16 +22,21 @@ function ProductCard({ productInfo }) {
 
   // this specific snackbar will disappear after 3 seconds
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   return (
+
     <div className='w-full'>
-      <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden'>
+      <SnackbarProvider variant="success" />
+      <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden' data-aos="fade-up">
         <Link 
           to={`/product/${id}`}
           state={productInfo}
         >        
           <div className='h-48'>
-            <img src={image} alt='' className='w-full h-full object-cover' />
+            <img src={image} alt={image} className='w-full h-full object-cover cursor-pointer' />
           </div>
         </Link>
         <div className='p-5 flex-col flex gap-2'>
@@ -62,7 +70,6 @@ function ProductCard({ productInfo }) {
               20k reviews
             </span>
           </span>
-          <SnackbarProvider variant="success" />
           <button onClick={() => {
             handleAddToCart(productInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
           }} className='bg-[#024E82] text-xs uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
