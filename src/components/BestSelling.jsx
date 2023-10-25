@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 function BestSelling() {
 
-    const { shopProducts, addItemToCart } = useContext(CartContext)
+    const { shopProducts} = useContext(CartContext)
 
 
     return (

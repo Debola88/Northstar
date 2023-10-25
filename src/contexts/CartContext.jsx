@@ -18,7 +18,7 @@ export const CartContext = createContext({
 
 
 // creating some of the independent / helper functions that will be used within the context
-const addCartItem = (cartItems, itemToAdd) => {
+const addCartItem = (cartItems, itemToAdd, sizeToAdd) => {
 
   // First check if the item exists in the cart array
   const existingCartItem = cartItems.find(
@@ -33,7 +33,7 @@ const addCartItem = (cartItems, itemToAdd) => {
   }
 
   // if the item does not exist, add the item to the cart array
-  return [...cartItems, { ...itemToAdd, quantity: 1 }];
+  return [...cartItems, { ...itemToAdd, quantity: 1 , size: sizeToAdd || 'medium'}];
 }
 
 const removeCartItem = (cartItems, cartItemToRemove) => {

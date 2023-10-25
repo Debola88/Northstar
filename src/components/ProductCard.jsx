@@ -4,13 +4,14 @@ import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { CartContext } from '../contexts/CartContext'
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+import { Link } from 'react-router-dom'
 
 
 function ProductCard({ productInfo }) {
 
-  const { addItemToCart, cartItems } = useContext(CartContext)
+  const { addItemToCart } = useContext(CartContext)
 
-  const { name, image, price, description, discount } = productInfo
+  const { name, image, price, discount, id } = productInfo
 
   const handleAddToCart = (product) => {
     addItemToCart(product)
@@ -22,9 +23,14 @@ function ProductCard({ productInfo }) {
   return (
     <div className='w-full'>
       <div className='bg-white text-gray-700 min-w-[8rem] shadow-lg rounded-lg overflow-hidden'>
-        <div className='h-48'>
-          <img src={image} alt='' className='w-full h-full object-cover' />
-        </div>
+        <Link 
+          to={`/product/${id}`}
+          state={productInfo}
+        >        
+          <div className='h-48'>
+            <img src={image} alt='' className='w-full h-full object-cover' />
+          </div>
+        </Link>
         <div className='p-5 flex-col flex gap-2'>
           <div className='flex items-center gap-2'>
             <span className='px-3 py-3 rounded-full text-xs bg-gray-100 '>stock ready</span>

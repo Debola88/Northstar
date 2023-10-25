@@ -1,12 +1,18 @@
 import React from 'react'
 import Selector from './Selector'
-import image from '../assets/img_1.png'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { MdOutlineEmail } from 'react-icons/md'
+import { useLocation } from 'react-router-dom'
 
-function Product() {
+const Product = () => {
+
+    const location = useLocation();
+    
+    const productInfo = location.state
+
+    const { name, image, description, price, discount, id,  } = productInfo
     return (
         <div>
             <div className='px-5 sm:px-16 py-16 w-full'>
@@ -19,14 +25,14 @@ function Product() {
                         </div>
                         <div>
                             <div className="flex-1">
-                                <ul className='flex font-semibold gap-4 uppercase text-lg max-md:text-base text-gray-500 ' >
+                                <ul className='flex font-semibold gap-4 uppercase text-lg max-md:text-base text-gray-500' >
                                     <li>Home </li>
                                     <li>shop </li>
                                     <li>women</li>
                                     <li className='text-black'>shop</li>
                                 </ul>
                             </div>
-                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>Plain White Shirt</h2>
+                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>{name}</h2>
                             <span className='py-4 flex items-center mt-1 gap-1 text-yellow-500'>
                                 <BsStarFill />
                                 <BsStarFill />
@@ -39,14 +45,13 @@ function Product() {
                             </span>
                             <div className='py-2 flex items-center gap-4 mt-1 text-xl max-md:xl' >
                                 <span className='line-through text-gray-400'>
-                                    $49.00
+                                    {price.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                                 <span className=' text-[#024E82]'>
-                                    $59.00
+                                    {(price - (price * (discount / 100))).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                             </div>
-                            <p className='text-gray-600 text-left text-lg font-semibold py-4'>A classic t-shirt never goes out of style. This is our most premium collection of
-                                shirt. This plain white shirt is made up of pure cotton and has a premium finish.</p>
+                            <p className='text-gray-600 text-left text-lg font-semibold py-4'>{description}</p>
                             <div className='text-left py-3'>
                                 <Selector />
                             </div>
