@@ -6,7 +6,8 @@
       "image": "https://cdn.filestackcontent.com/36MnmqiQJCSEzM0JDBAF",
       "description": "Elevate your style with our striking single red shirt. This premium garment is designed for those who appreciate the power of simplicity. Crafted with the finest materials, this red shirt exudes confidence and charisma. Make a statement with this timeless piece of fashion. Order yours today!",
       "price": 23000,
-      "discount": 16
+      "discount": 16,
+      "size": "medium"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "image": "https://cdn.filestackcontent.com/lMmsGRNNS7CulkKGmRYm",
       "description": "Experience timeless elegance with our classic white polo T-shirt. This versatile garment is a wardrobe essential that effortlessly combines style and comfort. Crafted from high-quality materials, our white polo T-shirt offers a clean and sophisticated look for any occasion. Elevate your casual attire with this wardrobe staple. Get yours now and enjoy the perfect blend of fashion and comfort!",
       "price": 15000, 
-      "discount": 14
+      "discount": 14,
+      "size": "medium"
     },
     {
       "id": 3,
@@ -22,7 +24,9 @@
       "image": "https://cdn.filestackcontent.com/sAaXb1XQwL0waNsIRM4A",
       "description": "Elevate your everyday style with our essential plain white T-shirt. This versatile wardrobe staple is designed for comfort and simplicity, making it the perfect choice for a wide range of occasions. Crafted from premium materials, our plain white T-shirt offers a clean and timeless look that pairs effortlessly with any outfit. Upgrade your basics with this classic piece. Grab yours today for a stylish and comfortable addition to your collection!",
       "price": 12000,
-      "discount": 33
+      "discount": 33,
+      "size": "medium"
+      
     },
     {
       "id": 4,
@@ -30,7 +34,8 @@
       "image": "https://cdn.filestackcontent.com/rBi8KHwSQymLlPEG3dWH",
       "description": "Discover the perfect blend of sophistication and comfort with our Polo Plain T-shirt. This versatile garment is a must-have in any fashion-conscious wardrobe. Crafted with premium materials, our Polo Plain T-shirt offers a clean and timeless look that suits various occasions. Whether you're dressing up or keeping it casual, this T-shirt delivers unmatched style and comfort. Elevate your wardrobe essentials today with this classic piece!",
       "price": 10000,
-      "discount": 15
+      "discount": 15,
+      "size": "medium"
     },
     {
       "id": 5,
@@ -38,7 +43,8 @@
       "image": "https://cdn.filestackcontent.com/MGSib85CQiuhjCRkN9Bx",
       "description": "Elevate your casual wardrobe with our stylish Pink Casual Shirt. This trendy and versatile shirt adds a pop of color to your everyday look. Crafted with care from high-quality materials, our Pink Casual Shirt combines fashion and comfort seamlessly. Whether you're going for a laid-back outing or a casual dinner, this shirt is the perfect choice. Make a statement with this vibrant addition to your collection. Get yours now and redefine casual fashion!",
       "price": 14000,
-      "discount": 33
+      "discount": 33,
+      "size": "medium"
     },
     {
       "id": 6,
@@ -46,7 +52,8 @@
       "image": "https://cdn.filestackcontent.com/YGiQVgiGQxScPRVRhGi3",
       "description": "Step out of the ordinary with our Outcast T-shirt. This unique and edgy tee is designed for those who dare to be different. Crafted with attention to detail, the Outcast T-shirt features a one-of-a-kind design that sets you apart from the crowd. Made with premium materials, it ensures both style and comfort. Embrace your individuality and make a statement with this standout piece. Join the Outcast movement and wear your uniqueness proudly. Get yours today!",
       "price": 27000,
-      "discount": 45
+      "discount": 45,
+      "size": "medium"
     },
     {
       "id": 7,
@@ -54,7 +61,8 @@
       "image": "https://cdn.filestackcontent.com/KwTBJnrOTJaEoAPxQ75Y",
       "description": "Elevate your casual elegance with our Gray Polo T-shirt. This versatile wardrobe staple combines sophistication and comfort effortlessly. Crafted from premium materials, our Gray Polo T-shirt offers a timeless and refined look suitable for various occasions. Whether you're heading to the office or enjoying a leisurely weekend, this T-shirt ensures style and comfort go hand in hand. Upgrade your classics with this understated yet stylish piece. Make it yours today and experience the perfect balance of fashion and comfort!",
       "price": 16000,
-      "discount": 45
+      "discount": 45,
+      "size": "medium"
     },
     {
       "id": 8,
@@ -62,7 +70,8 @@
       "image": "https://cdn.filestackcontent.com/FJiMlxQzavxako9SLrAj",
       "description": "Revitalize your wardrobe with our Dark Blue Shirt. This classic and versatile shirt is a timeless addition to your collection. Crafted with care from high-quality materials, our Dark Blue Shirt offers a sleek and understated look that suits a variety of occasions. Whether you're dressing up for a formal event or keeping it casual, this shirt is a dependable choice. Embrace the timeless appeal of dark blue and elevate your style effortlessly. Secure your classic piece today!",
       "price": 15000,
-      "discount": 33
+      "discount": 33,
+      "size": "medium"
     },
     {
       "id": 9,
@@ -70,7 +79,8 @@
       "image": "https://cdn.filestackcontent.com/PPzP294dRe2xDw0CU3Kg",
       "description": "Elevate your wardrobe with our Blue Plain Shirt, a versatile essential that blends simplicity and style seamlessly. Crafted from premium materials, this shirt offers a clean and timeless look suitable for a range of occasions. The rich blue hue adds a touch of sophistication to your attire, making it a versatile choice for both casual and semi-formal outings. Enhance your wardrobe's versatility with this classic piece. Get your Blue Plain Shirt today and experience the perfect combination of style and comfort!",
       "price": 10000,
-      "discount": 28
+      "discount": 28,
+      "size": "medium"
     },
     {
       "id": 10,
@@ -78,7 +88,8 @@
       "image": "https://cdn.filestackcontent.com/X5ZSAQwQWWjChuPSdkj2",
       "description": "Stay cozy and stylish with our Blue Sweatshirt. This wardrobe essential is designed for comfort without compromising on style. Crafted from high-quality materials, our Blue Sweatshirt offers a relaxed and classic look with a touch of warmth. Whether you're lounging at home, running errands, or meeting friends, this sweatshirt is your go-to choice. The cool blue color adds a trendy flair to your casual ensemble. Elevate your comfort and style with our Blue Sweatshirt-a must-have addition to your collection!",
       "price": 35000,
-      "discount": 13
+      "discount": 13,
+      "size": "medium"
     },
     {
       "id": 11,
@@ -86,7 +97,8 @@
       "image": "https://cdn.filestackcontent.com/ReeltIyMSjSPKUHu0VVs",
       "description": "Upgrade your casual sophistication with our Black Polo T-Shirt. This wardrobe staple seamlessly combines style and comfort. Crafted from premium materials, our Black Polo T-Shirt offers a timeless and refined look suitable for various occasions. Whether you're headed to a business meeting or a relaxed evening out, this T-shirt ensures you look your best while feeling comfortable. Elevate your classics with this sleek and versatile piece. Make it yours today and experience the perfect balance of fashion and comfort!",
       "price": 20000,
-      "discount": 13
+      "discount": 13,
+      "size": "medium"
     }
   ]
 }

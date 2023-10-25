@@ -5,11 +5,10 @@ import { CartContext } from '../contexts/CartContext';
 import CartItem from './CartItem';
 
 
-
 const Cart = () => {
-
-  const { cartItems, totalPrice, totalQuantity } = useContext(CartContext)
-
+  
+  const { cartItems, totalPrice } = useContext(CartContext)
+  
   return (
     <div>
       <div className='px-5 sm:px-16 py-20'>
@@ -24,12 +23,12 @@ const Cart = () => {
                 cartItems.length === 0 
                 ? <p className='text-gray-500'>Your cart is empty</p> 
                 : cartItems.map((item) => (
-                  <CartItem  cartItemInfo={item}/>
+                  <CartItem key={item.id} cartItemInfo={item}/>
                 ))
               }
             </div>
             <div className=''>
-              <div className='shadow-lg rounded-md bg-white text-gray-700 min-h-[120px] overflow-hidden p-10'>
+              <div className={`${cartItems.length === 0 && 'hidden'} border-2   shadow-lg rounded-md bg-white text-gray-700 min-h-[120px] overflow-hidden p-10`}>
                 <h1 className='border-b pb-4 text-[#024E82] sm:text-3xl text-xl font-bold text-left justify-start top-0'>Cart Summary</h1>
                 <div className='flex justify-between pt-4'>
                   <span className='text-black'>Total Price :</span>
@@ -40,7 +39,7 @@ const Cart = () => {
           </div>
         </div>
         <div className='text-left'>
-          <button className='bg-[#024E82] text-sm uppercase sm:px-8 py-3 px-5 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'>
+          <button className={`${cartItems.length === 0 && 'hidden'} bg-[#024E82] text-sm uppercase sm:px-8 py-3 px-5 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition`}>
             PROCEED TO CHECKOUT
           </button>
         </div>

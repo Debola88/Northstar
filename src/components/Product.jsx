@@ -1,16 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Selector from './Selector'
-import image from '../assets/img_1.png'
 import { BsStarFill } from 'react-icons/bs'
 import { BsStarHalf } from 'react-icons/bs'
 import { BsStar } from 'react-icons/bs'
 import { MdOutlineEmail } from 'react-icons/md'
 import { IoIosRemove } from 'react-icons/io'
 import { IoIosAdd } from 'react-icons/io'
+import { useLocation } from 'react-router-dom'
+import { CartContext } from '../contexts/CartContext'
 
-function Product() {
+
+const Product = () => {
+
+    const location = useLocation();
+    
+    const productInfo = location.state
+
+    const { name, image, description, price, discount, id,  } = productInfo
 
     const [count, setCount] = useState(0)
+
+    const {addItemToCart} = useContext(CartContext)
+
+    const handleAddToCart = (product) => addItemToCart(product)
+
+    const [sizes, setSizes] = useState(
+        [{
+          code: 'Small',
+          spec: 'S'
+        },
+        {
+          code: 'Medium',
+          spec: 'M'
+        },
+        {
+          code: 'Large',
+          spec: 'L'
+        },
+        {
+          code: 'ExtraLarge',
+          spec: 'XL'
+        }
+      ])
+    
+    const [specificSize, setSpecificSize] = useState('') 
 
     return (
         <div>
@@ -36,16 +69,18 @@ function Product() {
                             </span>
                             <div className='py-2 flex items-center gap-4 mt-1 text-xl max-md:xl' >
                                 <span className='line-through text-gray-400'>
-                                    $49.00
+                                    {price.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                                 <span className=' text-[#024E82]'>
-                                    $59.00
+                                    {(price - (price * (discount / 100))).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                             </div>
-                            <p className='text-gray-600 text-left text-lg font-semibold py-4'>A classic t-shirt never goes out of style. This is our most premium collection of
-                                shirt. This plain white shirt is made up of pure cotton and has a premium finish.</p>
+                            <p className='text-gray-600 text-left text-lg font-semibold py-4'>{description}</p>
                             <div className='text-left py-3'>
-                                <Selector />
+                                <Selector 
+                                    sizes={sizes} 
+                                    setSpecificSize={setSpecificSize}
+                                />
                             </div>
                             <div className='flex gap-10 max-sm:mt-4'>
                                 <span
@@ -61,7 +96,10 @@ function Product() {
                                 </span>
                             </div>
                             <div className='text-left left-0 py-4'>
-                                <button className='bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'>
+                                <button 
+                                    className='bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'
+                                    onClick={() => handleAddToCart({...productInfo, quantity: count, size: specificSize})}
+                                >
                                     ADD TO CART
                                 </button>
                             </div>

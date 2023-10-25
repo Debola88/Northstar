@@ -18,7 +18,7 @@ export const CartContext = createContext({
 
 
 // creating some of the independent / helper functions that will be used within the context
-const addCartItem = (cartItems, itemToAdd) => {
+const addCartItem = (cartItems, itemToAdd,sizeToAdd,) => {
 
   // First check if the item exists in the cart array
   const existingCartItem = cartItems.find(
@@ -28,12 +28,12 @@ const addCartItem = (cartItems, itemToAdd) => {
   // if the item exists map the cartItem array and when you get to the item with the same id, increase the quantity by one
   if (existingCartItem) {
     return cartItems.map((cartItem) =>
-      cartItem.id === itemToAdd.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      cartItem.id === itemToAdd.id ? { ...cartItem, quantity: cartItem.quantity + (itemToAdd.quantity || 1), size: (itemToAdd.size || cartItem.size)} : cartItem
     );
   }
 
   // if the item does not exist, add the item to the cart array
-  return [...cartItems, { ...itemToAdd, quantity: 1 }];
+  return [...cartItems, { ...itemToAdd, quantity: itemToAdd.quantity || 1, size: itemToAdd.size || 'medium'}, ];
 }
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
