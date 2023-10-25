@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
-function Selector() {
+const Selector = ({sizes, setSpecificSize}) => {
 
   const [isOpen, setIsOpen] = useState(false)
-  const handleClose = () => setIsOpen(!isOpen)
-
+  const handleClose = (selectedSize) =>  {
+    setSpecificSize(selectedSize)
+    setIsOpen(!isOpen)
+  }
 
   return (
       <div className='relative flex flex-col items-center w-[220px] max-sm:w-[200px]'>
@@ -20,10 +22,10 @@ function Selector() {
         {isOpen && (
           <div className='bg-gray-200 absolute top-[4.4rem] flex flex-col items-start w-full'>
             <div className='w-full'>
-              <div className='border-b-2 border-slate-100 hover:bg-gray-300 cursor-pointer'><h3 className='flex justify-between p-4 ' onClick={handleClose}><span>Small</span><span>S</span></h3></div>
-              <div className='border-b-2 border-slate-100 hover:bg-gray-300 cursor-pointer'><h3 className='flex justify-between p-4 ' onClick={handleClose}><span>Medium</span><span>M</span></h3></div>
-              <div className='border-b-2 border-slate-100 hover:bg-gray-300 cursor-pointer'><h3 className='flex justify-between p-4 ' onClick={handleClose}><span>Large</span><span>L</span></h3></div>
-              <div className='border-b-2 border-slate-100 hover:bg-gray-300 cursor-pointer'><h3 className='flex justify-between p-4 ' onClick={handleClose}><span>ExtraLarge</span><span>XL</span></h3></div>
+              {
+                sizes.map((size)=> <div key={size.spec} className='border-b-2 border-slate-100 hover:bg-gray-300 cursor-pointer'><h3 className='flex justify-between p-4 ' onClick={() => handleClose(size.code)}><span>{size.code}</span><span>{size.spec}</span></h3></div>
+                )
+              }
             </div>
           </div>
         )}

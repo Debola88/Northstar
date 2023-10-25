@@ -5,11 +5,12 @@ import { CartContext } from '../contexts/CartContext';
 import CartItem from './CartItem';
 
 
-
 const Cart = () => {
+  
+  const { cartItems, totalPrice } = useContext(CartContext)
 
-  const { cartItems, totalPrice, totalQuantity } = useContext(CartContext)
- 
+  console.log(cartItems)
+  
   return (
     <div>
       <div className='px-5 sm:px-16 py-20'>
@@ -24,7 +25,7 @@ const Cart = () => {
                 cartItems.length === 0 
                 ? <p className='text-gray-500'>Your cart is empty</p> 
                 : cartItems.map((item) => (
-                  <CartItem  cartItemInfo={item}/>
+                  <CartItem key={item.id} cartItemInfo={item}/>
                 ))
               }
             </div>
