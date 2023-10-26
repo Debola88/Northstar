@@ -63,7 +63,7 @@ function Footer() {
                                         enqueueSnackbar('Add your email', { variant: "info" }) :
                                         enqueueSnackbar('Sent Email', { variant: "success" });
                                     handleClick()
-                                }}><IoIosArrowForward /></button>
+                                }}><IoIosArrowForward className='text-2xl' /></button>
                             </form>
                         </div>
 
