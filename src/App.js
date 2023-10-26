@@ -9,6 +9,7 @@ import BillingDetails from './components/BillingDetails';
 import Layout from './components/Layout';
 import NoMatch from './components/NoMatch';
 import { CartProvider } from './contexts/CartContext';
+import GetInTouch from './components/GetInTouch';
 
 
 const routes = createBrowserRouter(createRoutesFromElements(
@@ -19,6 +20,7 @@ const routes = createBrowserRouter(createRoutesFromElements(
     <Route path='cart' element={<Cart />} />
     <Route path='product/:id' element={<Product />} />
     <Route path='billingdetails' element={<BillingDetails />} />
+    <Route path='getintouch' element={<GetInTouch />} />
     <Route path='*' element={<NoMatch />} />
   </Route>
 ))

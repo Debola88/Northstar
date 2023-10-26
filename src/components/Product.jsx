@@ -18,7 +18,7 @@ const Product = () => {
 
     const { name, image, description, price, discount, id,  } = productInfo
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
 
     const {addItemToCart} = useContext(CartContext)
 
@@ -90,7 +90,7 @@ const Product = () => {
                                 </span>
                                 <span className='justify-center items-center text-center'>{count}</span>
                                 <span
-                                    className={`${count === 0 ? 'pointer-events-none':''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
+                                    className={`${count === 1 ? 'pointer-events-none':''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
                                     onClick={() => (setCount(count - 1))} >
                                     <IoIosRemove/>
                                 </span>

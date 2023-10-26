@@ -6,9 +6,9 @@ import CartItem from './CartItem';
 
 
 const Cart = () => {
-  
+
   const { cartItems, totalPrice } = useContext(CartContext)
-  
+
   return (
     <div>
       <div className='px-5 sm:px-16 py-20'>
@@ -16,24 +16,22 @@ const Cart = () => {
           <span className='text-gray-500'>Home /</span>
           <span> Shopping</span>
         </div>
-        <div className='flex flex-col py-16'>
-          <div className='grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-10 text-center justify-center'>
-            <div className='col-span-2'>
-              {
-                cartItems.length === 0 
-                ? <p className='text-gray-500'>Your cart is empty</p> 
+        <div className='grid py-16 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-10 text-center justify-center'>
+          <div className='col-span-2'>
+            {
+              cartItems.length === 0
+                ? <p className='text-gray-500 text-center'>Your cart is empty</p>
                 : cartItems.map((item) => (
-                  <CartItem key={item.id} cartItemInfo={item}/>
+                  <CartItem key={item.id} cartItemInfo={item} />
                 ))
-              }
-            </div>
-            <div className=''>
-              <div className={`${cartItems.length === 0 && 'hidden'} border-2   shadow-lg rounded-md bg-white text-gray-700 min-h-[120px] overflow-hidden p-10`}>
-                <h1 className='border-b pb-4 text-[#024E82] sm:text-3xl text-xl font-bold text-left justify-start top-0'>Cart Summary</h1>
-                <div className='flex justify-between pt-4'>
-                  <span className='text-black'>Total Price :</span>
-                  <span className='text-[#024E82] sm:text-2xl text-lg'>{totalPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
-                </div>
+            }
+          </div>
+          <div className=''>
+            <div className={`${cartItems.length === 0 && 'hidden'} border-2   shadow-lg rounded-md bg-white text-gray-700 min-h-[120px] overflow-hidden p-10`}>
+              <h1 className='border-b pb-4 text-[#024E82] sm:text-3xl text-xl font-bold text-left justify-start top-0'>Cart Summary</h1>
+              <div className='flex justify-between pt-4'>
+                <span className='text-black'>Total Price :</span>
+                <span className='text-[#024E82] sm:text-2xl text-lg'>{totalPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
               </div>
             </div>
           </div>

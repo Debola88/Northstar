@@ -13,24 +13,24 @@ function BillingDetails() {
                 <div className='py-6 overflow-hidden'>
                     <form className='space-y-4 overflow-hidden justify-start'>
                         <div className='text-left flex flex-col'>
-                            <label className=''>Name</label>
-                            <input type="text" className='text-left w-[400px] p-2 h-10 outline-none' />
+                            <label className=''>Full Name</label>
+                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
-                            <label className=''>Name</label>
-                            <input type="text" className='text-left w-[400px] p-2 h-10 outline-none' />
+                            <label className=''>Street address</label>
+                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name'/>
                         </div>
                         <div className='text-left flex flex-col'>
-                            <label className=''>Name</label>
-                            <input type="text" className='text-left w-[400px] p-2 h-10 outline-none' />
+                            <label className=''>Town / City</label>
+                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
-                            <label className=''>Name</label>
-                            <input type="text" className='text-left w-[400px] p-2 h-10 outline-none' />
+                            <label className=''>Phone</label>
+                            <input type="tel" className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
-                            <label className=''>Name</label>
-                            <input type="text" className='text-left w-[400px] p-2 h-10 outline-none' />
+                            <label className=''>Email address</label>
+                            <input type="email" className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                     </form>
                 </div>

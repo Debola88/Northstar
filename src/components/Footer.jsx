@@ -5,9 +5,22 @@ import { BiLogoMastercard } from 'react-icons/bi';
 import { FaCcPaypal } from 'react-icons/fa6';
 import { FaDhl } from 'react-icons/fa6';
 import { IoIosArrowForward } from "react-icons/io";
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+import { useState } from 'react';
 
 
 function Footer() {
+
+
+    const [email, setEmail] = useState('');
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    }
+    const handleClick = () => {
+        // 👇️ clear input value
+        setEmail('');
+    };
+
     return (
         <div className='bg-gray-200 text-gray-500 pt-10 text-sm px-5 sm:px-16'>
             <div className='max-w-7xl mx-auto'>
@@ -43,8 +56,14 @@ function Footer() {
                         <h3 className='uppercase font-bold text-black'>Get in the know</h3>
                         <div className="text-left">
                             <form className='left-0 w-full space-y-4'>
-                                <input type="email" placeholder='Enter email' className='text-left w-60 h-12 text-black font-semibold border-b-[0.4px] bg-transparent border-b-gray-500 outline-none' />
-                                <span className='absolute text-xl cursor-pointer'><IoIosArrowForward /></span>
+                                <input type="email" placeholder='Enter email' value={email} className='text-left w-60 h-12 text-black font-semibold border-b-[0.4px] bg-transparent border-b-gray-500 outline-none' onChange={handleEmailChange} />
+                                <SnackbarProvider variant="info" autoHideDuration={3000} />
+                                <button type="button" className='absolute text-xl cursor-pointer' onClick={() => {
+                                    email === '' ?
+                                        enqueueSnackbar('Add your email', { variant: "info" }) :
+                                        enqueueSnackbar('Sent Email', { variant: "success" });
+                                    handleClick()
+                                }}><IoIosArrowForward /></button>
                             </form>
                         </div>
 
