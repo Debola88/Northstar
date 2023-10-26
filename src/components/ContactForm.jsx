@@ -61,11 +61,10 @@ function ContactForm() {
                     </div>
                     <div className='text-left py-10'>
                         <button type='button' className='text-xs bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={() => {
-                            handleClick(); {
+                            handleClick(); 
                                 message === '' ?
                                 enqueueSnackbar('Fill all information properly', { variant:"info" }) :
                                 enqueueSnackbar('Message sent successfully!', { variant:"success" })
-                            }
                         }}>
                             Send message
                         </button>

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import MiniNavBar from './MiniNavBar'
-import GetInTouch from './GetInTouch'
 import ContactForm from './ContactForm'
 import VisitUs from './VisitUs'
 
