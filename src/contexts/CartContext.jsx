@@ -18,7 +18,7 @@ export const CartContext = createContext({
 
 
 // creating some of the independent / helper functions that will be used within the context
-const addCartItem = (cartItems, itemToAdd,sizeToAdd,) => {
+const addCartItem = (cartItems, itemToAdd,) => {
 
   // First check if the item exists in the cart array
   const existingCartItem = cartItems.find(

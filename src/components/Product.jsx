@@ -16,34 +16,38 @@ const Product = () => {
     
     const productInfo = location.state
 
-    const { name, image, description, price, discount, id,  } = productInfo
+    const { name, image, description, price, discount} = productInfo
 
     const [count, setCount] = useState(1)
 
     const {addItemToCart} = useContext(CartContext)
 
-    const handleAddToCart = (product) => addItemToCart(product)
-
-    const [sizes, setSizes] = useState(
+    
+    const sizes = 
         [{
-          code: 'Small',
-          spec: 'S'
+            code: 'Small',
+            spec: 'S'
         },
         {
-          code: 'Medium',
-          spec: 'M'
+            code: 'Medium',
+            spec: 'M'
         },
         {
-          code: 'Large',
-          spec: 'L'
+            code: 'Large',
+            spec: 'L'
         },
         {
-          code: 'ExtraLarge',
-          spec: 'XL'
+            code: 'ExtraLarge',
+            spec: 'XL'
         }
-      ])
+    ]
     
     const [specificSize, setSpecificSize] = useState('') 
+    
+    const handleAddToCart = (product) => addItemToCart(product)
+
+    const newPrice = price - (price * (discount / 100))
+
 
     return (
         <div>
@@ -56,7 +60,7 @@ const Product = () => {
                             </div>
                         </div>
                         <div>
-                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>Plain White Shirt</h2>
+                            <h2 className='text-left text-black font-semibold text-5xl max-md:text-3xl py-4'>{name}</h2>
                             <span className='py-2 flex items-center mt-1 gap-1 text-yellow-500'>
                                 <BsStarFill />
                                 <BsStarFill />
@@ -72,7 +76,7 @@ const Product = () => {
                                     {price.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                                 <span className=' text-[#024E82]'>
-                                    {(price - (price * (discount / 100))).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
+                                    {newPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
                                 </span>
                             </div>
                             <p className='text-gray-600 text-left text-lg font-semibold py-4'>{description}</p>
@@ -98,7 +102,7 @@ const Product = () => {
                             <div className='text-left left-0 py-4'>
                                 <button 
                                     className='bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'
-                                    onClick={() => handleAddToCart({...productInfo, quantity: count, size: specificSize})}
+                                    onClick={() => handleAddToCart({...productInfo, price:newPrice, quantity: count, size: specificSize})}
                                 >
                                     ADD TO CART
                                 </button>

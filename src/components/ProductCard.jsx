@@ -20,6 +20,8 @@ function ProductCard({ productInfo }) {
     addItemToCart(product)
   }
 
+  const newPrice = price - (price * (discount / 100))
+
   // this specific snackbar will disappear after 3 seconds
 
   useEffect(() => {
@@ -49,7 +51,7 @@ function ProductCard({ productInfo }) {
           </h2>
           <div>
             <span className='text-lg font-bold'>
-              <h3 className='text-left'>{(price - (price * (discount / 100))).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</h3>
+              <h3 className='text-left'>{newPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</h3>
             </span>
             <div className='flex items-center gap-2 mt-1' >
               <span className='text-sm text-slate-400 line-through'>
@@ -71,7 +73,7 @@ function ProductCard({ productInfo }) {
             </span>
           </span>
           <button onClick={() => {
-            handleAddToCart(productInfo); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
+            handleAddToCart({...productInfo, price: newPrice}); enqueueSnackbar('Product added successfully!', { autoHideDuration: 2000 }, { variant: 'success' })
           }} className='bg-[#024E82] text-xs uppercase rounded-full sm:px-8 py-3 px-5 text-white hover:bg-[#022b82] hover:text-white transition'>
             Add to cart
           </button>
