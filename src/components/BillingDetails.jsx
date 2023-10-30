@@ -1,7 +1,15 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext';
+import CartItem from './CartItem';
 
 
-function BillingDetails() {
+
+const BillingDetails = ({ productInfo }) => {
+
+    const { totalPrice, cartItems } = useContext(CartContext)
+
+
     return (
         <div>
             <div className='px-5 sm:px-16 py-20'>
@@ -18,7 +26,7 @@ function BillingDetails() {
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Street address</label>
-                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name'/>
+                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name' />
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Town / City</label>
@@ -43,17 +51,17 @@ function BillingDetails() {
                         </div>
                         <div>
                             <div className='flex justify-between pt-4 text-gray-500'>
-                                <span className=''>Plain White Shirt</span>
-                                <span className=''>$59.00</span>
+                                <span className=''>Plain White</span>
+                                <span className=''>$55.00</span>
                             </div>
                         </div>
                         <div className='flex justify-between pt-4 text-gray-500'>
                             <span className=''>Subtotal</span>
-                            <span className=''>$59.00</span>
+                            <span className=''>{totalPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
                         </div>
                         <div className='flex justify-between pt-4'>
                             <span className='text-black'></span>
-                            <span className='text-[#024E82] sm:text-2xl text-lg'>$59.00</span>
+                            <span className='text-[#024E82] sm:text-2xl text-lg'>{(totalPrice + 1000).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
                         </div>
                     </div>
                 </div>

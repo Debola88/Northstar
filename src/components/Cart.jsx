@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
-
-
 import { CartContext } from '../contexts/CartContext';
 import CartItem from './CartItem';
-
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -16,7 +14,7 @@ const Cart = () => {
           <span className='text-gray-500'>Home /</span>
           <span> Shopping</span>
         </div>
-        <div className='grid py-16 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-10 text-center justify-center'>
+        <div className='grid py-16 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-5 text-center justify-center'>
           <div className='col-span-2'>
             {
               cartItems.length === 0
@@ -37,9 +35,13 @@ const Cart = () => {
           </div>
         </div>
         <div className='text-left'>
-          <button className={`${cartItems.length === 0 && 'hidden'} bg-[#024E82] text-sm uppercase sm:px-8 py-3 px-5 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition`}>
-            PROCEED TO CHECKOUT
-          </button>
+          <Link
+            to="/billingdetails"
+          >
+            <button className={`${cartItems.length === 0 && 'hidden'} bg-[#024E82] text-sm uppercase sm:px-8 py-3 px-5 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition`}>
+              PROCEED TO CHECKOUT
+            </button>
+          </Link>
         </div>
       </div>
     </div>

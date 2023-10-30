@@ -8,22 +8,23 @@ import { IoIosRemove } from 'react-icons/io'
 import { IoIosAdd } from 'react-icons/io'
 import { useLocation } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 
 const Product = () => {
 
     const location = useLocation();
-    
+
     const productInfo = location.state
 
-    const { name, image, description, price, discount} = productInfo
+    const { name, image, description, price, discount } = productInfo
 
     const [count, setCount] = useState(1)
 
-    const {addItemToCart} = useContext(CartContext)
+    const { addItemToCart } = useContext(CartContext)
 
-    
-    const sizes = 
+
+    const sizes =
         [{
             code: 'Small',
             spec: 'S'
@@ -40,10 +41,10 @@ const Product = () => {
             code: 'ExtraLarge',
             spec: 'XL'
         }
-    ]
-    
-    const [specificSize, setSpecificSize] = useState('') 
-    
+        ]
+
+    const [specificSize, setSpecificSize] = useState('')
+
     const handleAddToCart = (product) => addItemToCart(product)
 
     const newPrice = price - (price * (discount / 100))
@@ -51,6 +52,7 @@ const Product = () => {
 
     return (
         <div>
+            <SnackbarProvider variant="success" />
             <div className='px-5 sm:px-16 py-16 w-full'>
                 <div className='flex flex-col justify-between'>
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8'>
@@ -81,8 +83,8 @@ const Product = () => {
                             </div>
                             <p className='text-gray-600 text-left text-lg font-semibold py-4'>{description}</p>
                             <div className='text-left py-3'>
-                                <Selector 
-                                    sizes={sizes} 
+                                <Selector
+                                    sizes={sizes}
                                     setSpecificSize={setSpecificSize}
                                 />
                             </div>
@@ -94,15 +96,15 @@ const Product = () => {
                                 </span>
                                 <span className='justify-center items-center text-center'>{count}</span>
                                 <span
-                                    className={`${count === 1 ? 'pointer-events-none':''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
+                                    className={`${count === 1 ? 'pointer-events-none' : ''} 'text cursor-pointer border rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'`}
                                     onClick={() => (setCount(count - 1))} >
-                                    <IoIosRemove/>
+                                    <IoIosRemove />
                                 </span>
                             </div>
                             <div className='text-left left-0 py-4'>
-                                <button 
+                                <button
                                     className='bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'
-                                    onClick={() => handleAddToCart({...productInfo, price:newPrice, quantity: count, size: specificSize})}
+                                    onClick={() => { handleAddToCart({ ...productInfo, price: newPrice, quantity: count, size: specificSize }); enqueueSnackbar('Product added successfully!', { variant: 'success' }) }}
                                 >
                                     ADD TO CART
                                 </button>
