@@ -1,17 +1,56 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../contexts/CartContext';
-import CartItem from './CartItem';
+import { useNavigate } from 'react-router-dom';
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 
-
-const BillingDetails = ({ productInfo }) => {
-
+const BillingDetails = () => {
+    const { addItemToCart, removeItemFromCart, deleteItemFromCart } = useContext(CartContext);
+    const navigate = useNavigate()
     const { totalPrice, cartItems } = useContext(CartContext)
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+    const [town, setTown] = useState('');
+    const [phone, setPhone] = useState('');
+    const [button, setButton] = useState('PLACE ORDER');
+
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    }
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    }
+
+    const handleAddressChange = (event) => {
+        setAddress(event.target.value);
+    }
+
+    const handleTownChange = (event) => {
+        setTown(event.target.value);
+    }
+
+    const handlePhoneChange = (event) => {
+        setPhone(event.target.value);
+    }
+
+
+    const handleClick = () => {
+        // clear input value
+        setName('');
+        setEmail('');
+        setAddress('');
+        setPhone('');
+        setTown('');
+    };
+
 
 
     return (
         <div>
+            <SnackbarProvider variant="info" autoHideDuration={3000} />
             <div className='px-5 sm:px-16 py-20'>
                 <div className='flex uppercase text-left font-semibold text-sm cursor-pointer'>
                     <span className='text-gray-500'>Home /</span>
@@ -22,23 +61,23 @@ const BillingDetails = ({ productInfo }) => {
                     <form className='space-y-4 overflow-hidden justify-start'>
                         <div className='text-left flex flex-col'>
                             <label className=''>Full Name</label>
-                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' />
+                            <input type="text" value={name} onChange={handleNameChange} className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Street address</label>
-                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name' />
+                            <input type="text" value={address} onChange={handleAddressChange} className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name' />
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Town / City</label>
-                            <input type="text" className='text-left w-[500px] p-2 h-10 outline-none' />
+                            <input type="text" value={town} onChange={handleTownChange} className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Phone</label>
-                            <input type="tel" className='text-left w-[500px] p-2 h-10 outline-none' />
+                            <input type="tel" value={phone} onChange={handlePhoneChange} className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                         <div className='text-left flex flex-col'>
                             <label className=''>Email address</label>
-                            <input type="email" className='text-left w-[500px] p-2 h-10 outline-none' />
+                            <input type="email" value={email} onChange={handleEmailChange} className='text-left w-[500px] p-2 h-10 outline-none' />
                         </div>
                     </form>
                 </div>
@@ -50,10 +89,11 @@ const BillingDetails = ({ productInfo }) => {
                             <span className='text-black sm:text-xl text-base'>Total</span>
                         </div>
                         <div>
-                            <div className='flex justify-between pt-4 text-gray-500'>
-                                <span className=''>Plain White</span>
-                                <span className=''>$55.00</span>
-                            </div>
+                            {cartItems.map((cartItem) => <div key={cartItem.id} className='flex justify-between pt-4 text-gray-500'>
+                                <span className=''>{cartItem.name}</span>
+                                <span className=''>{(cartItem.price).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
+                            </div>)}
+
                         </div>
                         <div className='flex justify-between pt-4 text-gray-500'>
                             <span className=''>Subtotal</span>
@@ -69,12 +109,17 @@ const BillingDetails = ({ productInfo }) => {
                     <p className='p-5'>Cash on delivery. Please contact us if you require assistance or wish to make alternate arrangements.</p>
                 </div>
                 <div className='sm:text-right sm:right-0 text-left left-0 py-4'>
-                    <button className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'>
-                        PLACE ORDER
+                    <button value={button} className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={() => {
+                        handleClick();
+                        email === '' ?
+                            enqueueSnackbar('Fill all information properly', { variant: "info" }) :
+                            navigate('ordersummary'); deleteItemFromCart(cartItems)
+                    }}>
+                        {button}
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

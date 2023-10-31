@@ -20,7 +20,7 @@ const NavBar = () => {
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-[3.5rem]">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink  to="/" className='flex gap-2' onClick={handleClick}><span className='text-sm'>HOME</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink  to="/" className='text-sm' onClick={handleClick}>HOME</NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink  to="/about" className='flex gap-2' onClick={handleClick}><span className='text-sm'> ABOUT</span></NavLink></nav></li>
         <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink  to="/ContactUs" className='flex gap-2' onClick={handleClick}><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
       </ul>
@@ -54,9 +54,9 @@ const NavBar = () => {
         <div className='lg:flex md:flex lg:flex-1 items-center justify-end font-normal hidden'>
           <div className=''>
             <ul className='flex gap-8 mr-0 text-sm text-black'>
-              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/">HOME</NavLink></nav></li>
-              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/about">ABOUT</NavLink></nav></li>
-              <li className='hover:text-blue-800 transition cursor-pointer font-semibold'><nav><NavLink to="/ContactUs">CONTACT US</NavLink></nav></li>
+              <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/">HOME</NavLink></nav></li>
+              <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/about">ABOUT</NavLink></nav></li>
+              <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/ContactUs">CONTACT US</NavLink></nav></li>
               <li className='transition cursor-pointer ml-20'><nav><NavLink  to="/user"><LuUser className='text-lg'/></NavLink></nav></li>
               <li className='transition cursor-pointer'>
                 <nav className='flex'>

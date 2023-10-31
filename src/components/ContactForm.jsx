@@ -30,7 +30,7 @@ function ContactForm() {
 
 
     const handleClick = () => {
-        // 👇️ clear input value
+        // clear input value
         setFirstname('');
         setEmail('');
         setMessage('');
@@ -39,7 +39,7 @@ function ContactForm() {
 
     return (
         <div>
-            <SnackbarProvider variant="info" autoHideDuration={3000}/>
+            <SnackbarProvider variant="info" autoHideDuration={3000} />
             <h2 className='text-3xl text-[#3A3939] font-bold sm:text-4xl'>We would love to hear from you.</h2>
             <h3 className='py-8'>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</h3>
             <div className=" " data-aos="zoom-in-up">
@@ -61,10 +61,10 @@ function ContactForm() {
                     </div>
                     <div className='text-left py-10'>
                         <button type='button' className='text-xs bg-[#024E82] uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={() => {
-                            handleClick(); 
-                                message === '' ?
-                                enqueueSnackbar('Fill all information properly', { variant:"info" }) :
-                                enqueueSnackbar('Message sent successfully!', { variant:"success" })
+                            handleClick();
+                            message === '' ?
+                                enqueueSnackbar('Fill all information properly', { variant: "info" }) :
+                                enqueueSnackbar('Message sent successfully!', { variant: "success" })
                         }}>
                             Send message
                         </button>
