@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const CartItem = ({ cartItemInfo }) => {
   const { addItemToCart, removeItemFromCart, deleteItemFromCart } = useContext(CartContext);
-  const { image, name, price, quantity, discount, id } = cartItemInfo;
+  const { image, name, price, quantity, id } = cartItemInfo;
 
   return (
     <div>
