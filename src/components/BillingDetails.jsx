@@ -6,7 +6,7 @@ import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 
 
 const BillingDetails = () => {
-    const { addItemToCart, removeItemFromCart, deleteItemFromCart } = useContext(CartContext);
+    const { emptyCart } = useContext(CartContext);
     const navigate = useNavigate()
     const { totalPrice, cartItems } = useContext(CartContext)
     const [name, setName] = useState('');
@@ -46,6 +46,18 @@ const BillingDetails = () => {
         setTown('');
     };
 
+
+    const placeOrder = () => {
+        handleClick();
+        
+        if(email === ''){
+            enqueueSnackbar('Fill all information properly', { variant: "info" })
+        }
+        else{
+            emptyCart()
+            navigate('ordersummary'); 
+        }
+    }
 
 
     return (
@@ -109,12 +121,7 @@ const BillingDetails = () => {
                     <p className='p-5'>Cash on delivery. Please contact us if you require assistance or wish to make alternate arrangements.</p>
                 </div>
                 <div className='sm:text-right sm:right-0 text-left left-0 py-4'>
-                    <button value={button} className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={() => {
-                        handleClick();
-                        email === '' ?
-                            enqueueSnackbar('Fill all information properly', { variant: "info" }) :
-                            navigate('ordersummary'); deleteItemFromCart(cartItems)
-                    }}>
+                    <button value={button} className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={placeOrder}>
                         {button}
                     </button>
                 </div>
