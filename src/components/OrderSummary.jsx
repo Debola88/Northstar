@@ -8,9 +8,9 @@ const OrderSummary = () => {
     const navigate = useNavigate()
 
     return (
-        <div className='px-5 sm:px-16 py-6 flex max-sm:flex-col items-center'>
+        <div className='px-5 sm:px-16 pb-6 flex max-sm:flex-col items-center'>
             <div className='w-full max-w-max'>
-                <img src={orderconfirmed} alt='' className='max-h-[700px] w-auto justify-center items-center text-center' />
+                <img src={orderconfirmed} alt='' className='max-h-[700px] w-auto' />
             </div>
             <div className='text-left'>
                 <p className='text-3xl font-bold py-5'>Order confirmed!</p>
