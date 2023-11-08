@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
+import emptycart from '../assets/12.png'
 
 const Cart = () => {
 
@@ -18,7 +19,12 @@ const Cart = () => {
           <div className='col-span-2'>
             {
               cartItems.length === 0
-                ? <p className='text-gray-500 text-center'>Your cart is empty</p>
+                ? <div className='items-center justify-center w-auto'>
+                  <div className='text-center items-center justify-items-center' >                  
+                    <img src={emptycart} alt='' />
+                  </div>
+                  <p className='text-gray-500'>Your cart is empty</p>
+                </div>
                 : cartItems.map((item) => (
                   <CartItem key={item.id} cartItemInfo={item} />
                 ))
