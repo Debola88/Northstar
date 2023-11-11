@@ -2,11 +2,16 @@ import React from 'react'
 import ProductCard from './ProductCard'
 import { CartContext } from '../contexts/CartContext'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function BestSelling() {
 
     const { shopProducts} = useContext(CartContext)
+    const navigate = useNavigate()
 
+    const handleNavigate = () => {
+            navigate('products'); 
+    }
 
     return (
         <div className='px-5 sm:px-16 py-6'>
@@ -18,7 +23,7 @@ function BestSelling() {
                 }
             </div>
             <div className='p-20'>
-                <button className='text-xs text-white bg-[#024E82] uppercase py-2 px-5 hover:bg-[#024f82ef] border-2 border-[#024E82] hover:text-white transition'>shop now</button>
+                <button className='text-xs text-white bg-[#024E82] uppercase py-2 px-5 hover:bg-[#024f82ef] border-2 border-[#024E82] hover:text-white transition' onClick={handleNavigate}>shop now</button>
             </div>
         </div>
     )

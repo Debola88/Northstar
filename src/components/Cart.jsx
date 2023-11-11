@@ -15,7 +15,7 @@ const Cart = () => {
           <span className='text-gray-500'>Home /</span>
           <span> Shopping</span>
         </div>
-        <div className='grid py-10 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-5 text-center justify-center'>
+        <div className='grid py-10 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-5'>
           <div className='col-span-2'>
             {
               cartItems.length === 0
