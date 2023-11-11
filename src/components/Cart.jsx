@@ -10,20 +10,20 @@ const Cart = () => {
 
   return (
     <div>
-      <div className='px-5 sm:px-16 py-20'>
+      <div className='px-5 sm:px-16 py-16'>
         <div className='flex uppercase text-left font-semibold text-sm cursor-pointer'>
           <span className='text-gray-500'>Home /</span>
           <span> Shopping</span>
         </div>
-        <div className='grid py-16 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-5 text-center justify-center'>
+        <div className='grid py-10 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-x-5 text-center justify-center'>
           <div className='col-span-2'>
             {
               cartItems.length === 0
-                ? <div className='items-center justify-center w-auto'>
-                  <div className='text-center items-center justify-items-center' >                  
-                    <img src={emptycart} alt='' />
+                ? <div className='text-center'>
+                  <div className='w-full max-w-max' >                  
+                    <img src={emptycart} alt=''  className='max-h-[600px] w-auto'/>
                   </div>
-                  <p className='text-gray-500'>Your cart is empty</p>
+                  <p className='text-gray-500 text-center'>Your cart is empty</p>
                 </div>
                 : cartItems.map((item) => (
                   <CartItem key={item.id} cartItemInfo={item} />
