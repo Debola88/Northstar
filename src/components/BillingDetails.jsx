@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react'
 import { useContext, useState } from 'react'
 import { CartContext } from '../contexts/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +13,7 @@ const BillingDetails = () => {
     const [address, setAddress] = useState('');
     const [town, setTown] = useState('');
     const [phone, setPhone] = useState('');
-    const [button, setButton] = useState('PLACE ORDER');
+    const button = useState('PLACE ORDER');
 
     const handleNameChange = (event) => {
         setName(event.target.value);
