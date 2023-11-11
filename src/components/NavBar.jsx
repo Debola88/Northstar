@@ -9,20 +9,27 @@ import { useState } from 'react';
 // import { TiContacts } from "react-icons/ti";
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
+import { useNavigate } from 'react-router-dom'
+
 
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const {totalQuantity} = useContext(CartContext)
+  const { totalQuantity } = useContext(CartContext)
 
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate('');
+  }
 
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full bg-slate-100 left-0 transition'>
       <ul className="text-sm font-semibold text-left px-[3.5rem]">
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink  to="/" className='text-sm' onClick={handleClick}>HOME</NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink  to="/about" className='flex gap-2' onClick={handleClick}><span className='text-sm'> ABOUT</span></NavLink></nav></li>
-        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink  to="/ContactUs" className='flex gap-2' onClick={handleClick}><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center gap-2 flex text-lg'><nav><NavLink to="/" className='text-sm' onClick={handleClick}>HOME</NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink to="/about" className='flex gap-2' onClick={handleClick}><span className='text-sm'> ABOUT</span></NavLink></nav></li>
+        <li className='my-3 py-3 hover:bg-slate-200 hover:rounded item-center text-lg'><nav><NavLink to="/ContactUs" className='flex gap-2' onClick={handleClick}><span className='text-sm'> CONTACT US</span></NavLink></nav></li>
       </ul>
     </div>
   </>
@@ -36,17 +43,17 @@ const NavBar = () => {
             {click ? <FaTimes /> : <CiMenuBurger />}
           </button>
           <div className="flex items-center flex-1">
-            <span className='text-3xl font-bold text-black'>NorthStar</span>
+            <span className='text-3xl font-bold text-black cursor-pointer' onClick={handleNavigate}>NorthStar</span>
           </div>
         </div>
         <div className='text-lg flex gap-5 ml-auto justify-end items-center md:hidden'>
-          <nav><NavLink  to="/user"><LuUser className='text-lg'/></NavLink></nav>
+          <nav><NavLink to="/user"><LuUser className='text-lg' /></NavLink></nav>
           <nav className='flex justify-end'>
-            <NavLink  to="/cart">
+            <NavLink to="/cart">
               <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
                 <p className="text-xs text-white">{totalQuantity}</p>
               </span>
-              <BiArchive className='text-lg'/>
+              <BiArchive className='text-lg' />
             </NavLink>
           </nav>
         </div>
@@ -57,14 +64,14 @@ const NavBar = () => {
               <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/">HOME</NavLink></nav></li>
               <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/about">ABOUT</NavLink></nav></li>
               <li className='hover:text-[#024E82] transition cursor-pointer font-semibold'><nav><NavLink to="/ContactUs">CONTACT US</NavLink></nav></li>
-              <li className='transition cursor-pointer ml-20'><nav><NavLink  to="/user"><LuUser className='text-lg'/></NavLink></nav></li>
+              <li className='transition cursor-pointer ml-20'><nav><NavLink to="/user"><LuUser className='text-lg' /></NavLink></nav></li>
               <li className='transition cursor-pointer'>
                 <nav className='flex'>
-                  <NavLink  to="/cart">
+                  <NavLink to="/cart">
                     <span className='w-4 h-4 bg-blue-800 absolute rounded-full items-center text-center justify-center top-5'>
                       <p className="text-xs text-white">{totalQuantity}</p>
                     </span>
-                    <BiArchive className='text-lg'/>
+                    <BiArchive className='text-lg' />
                   </NavLink>
                 </nav>
               </li>
