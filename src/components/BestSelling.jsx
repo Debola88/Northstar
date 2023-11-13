@@ -19,7 +19,7 @@ function BestSelling() {
             <p className='pb-16'>Browse our top-selling products</p>
             <div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1'>
                 {
-                    shopProducts.slice(7, 11).map((product) => (<ProductCard key={product.id} productInfo={product} />))
+                    shopProducts.slice(8, 12).map((product) => (<ProductCard key={product.id} productInfo={product} />))
                 }
             </div>
             <div className='p-20'>

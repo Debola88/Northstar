@@ -48,13 +48,13 @@ const BillingDetails = () => {
 
     const placeOrder = () => {
         handleClick();
-        
-        if(email === ''){
+
+        if (email === '') {
             enqueueSnackbar('Fill all information properly', { variant: "info" })
         }
-        else{
+        else {
             emptyCart()
-            navigate('ordersummary'); 
+            navigate('ordersummary');
         }
     }
 
@@ -68,30 +68,7 @@ const BillingDetails = () => {
                     <span> CHECKOUT</span>
                 </div>
                 <h1 className='text-left sm:text-4xl text-xl text-black font-bold py-10'>Billing Details</h1>
-                <div className='py-6 overflow-hidden'>
-                    <form className='space-y-4 overflow-hidden justify-start'>
-                        <div className='text-left flex flex-col'>
-                            <label className=''>Full Name</label>
-                            <input type="text" value={name} onChange={handleNameChange} className='text-left w-[500px] p-2 h-10 outline-none' />
-                        </div>
-                        <div className='text-left flex flex-col'>
-                            <label className=''>Street address</label>
-                            <input type="text" value={address} onChange={handleAddressChange} className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name' />
-                        </div>
-                        <div className='text-left flex flex-col'>
-                            <label className=''>Town / City</label>
-                            <input type="text" value={town} onChange={handleTownChange} className='text-left w-[500px] p-2 h-10 outline-none' />
-                        </div>
-                        <div className='text-left flex flex-col'>
-                            <label className=''>Phone</label>
-                            <input type="tel" value={phone} onChange={handlePhoneChange} className='text-left w-[500px] p-2 h-10 outline-none' />
-                        </div>
-                        <div className='text-left flex flex-col'>
-                            <label className=''>Email address</label>
-                            <input type="email" value={email} onChange={handleEmailChange} className='text-left w-[500px] p-2 h-10 outline-none' />
-                        </div>
-                    </form>
-                </div>
+
                 <div className=''>
                     <div className='shadow-lg rounded-md bg-white text-gray-700 min-h-[200px] overflow-hidden p-10'>
                         <h1 className='border-b pb-4 text-[#024E82] sm:text-3xl text-xl font-bold text-left justify-start top-0'>Your Order</h1>
@@ -115,14 +92,36 @@ const BillingDetails = () => {
                             <span className='text-[#024E82] sm:text-2xl text-lg'>{(totalPrice + 1000).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
                         </div>
                     </div>
+                </div>  
+                <div className='py-6 pt-10 overflow-hidden'>
+                    <form className='space-y-4 overflow-hidden justify-start' onSubmit={placeOrder}>
+                        <div className='text-left flex flex-col'>
+                            <label className=''>Full Name</label>
+                            <input type="text" value={name} onChange={handleNameChange} className='text-left w-[500px] p-2 h-10 outline-none' required/>
+                        </div>
+                        <div className='text-left flex flex-col'>
+                            <label className=''>Street address</label>
+                            <input type="text" value={address} onChange={handleAddressChange} className='text-left w-[500px] p-2 h-10 outline-none' placeholder='House number and street name' required/>
+                        </div>
+                        <div className='text-left flex flex-col'>
+                            <label className=''>Town / City</label>
+                            <input type="text" value={town} onChange={handleTownChange} className='text-left w-[500px] p-2 h-10 outline-none' required/>
+                        </div>
+                        <div className='text-left flex flex-col'>
+                            <label className=''>Phone</label>
+                            <input type="tel" value={phone} onChange={handlePhoneChange} className='text-left w-[500px] p-2 h-10 outline-none' required/>
+                        </div>
+                        <div className='text-left flex flex-col'>
+                            <label className=''>Email address</label>
+                            <input type="email" value={email} onChange={handleEmailChange} className='text-left w-[500px] p-2 h-10 outline-none' required/>
+                        </div>
+                        <div className='sm:text-left sm:left-0 text-left left-0 py-4'>
+                            <input value='PLACE ORDER' type='submit' className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition'/>
+                        </div>
+                    </form>
                 </div>
-                <div className='mt-10 text-left text-sm border border-gray-300 text-gray-500 bg-slate-200'>
-                    <p className='p-5'>Cash on delivery. Please contact us if you require assistance or wish to make alternate arrangements.</p>
-                </div>
-                <div className='sm:text-right sm:right-0 text-left left-0 py-4'>
-                    <button value={button} className='bg-[#024E82] text-sm uppercase py-3 px-6 text-white hover:bg-[#025382]/90 border-2 hover:text-white transition' onClick={placeOrder}>
-                        {button}
-                    </button>
+                <div className='mt-6 text-left text-sm border border-gray-300 text-gray-500 bg-slate-200'>
+                    <p className='p-5'>Cash on delivery. Please contact us if you require assistance or wish to make alternate arrangements, delivery charges has been added already.</p>
                 </div>
             </div>
         </div >

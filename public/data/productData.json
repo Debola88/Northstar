@@ -99,6 +99,15 @@
       "price": 20000,
       "discount": 13,
       "size": "medium"
+    },
+    {
+      "id": 12,
+      "name": "Denim Jacket",
+      "image": "https://cdn.filestackcontent.com/zSVdr5F2RZqEv6BpRgO7",
+      "description": "Uplift your casual wears with our Denim Jacket. A classic Denim Jacket never goes out of style. This is our most premium collection of jackets. This plain white shirt is made up of pure cotton and has a premium finish.",
+      "price": 25000,
+      "discount": 35,
+      "size": "medium"
     }
   ]
 }
