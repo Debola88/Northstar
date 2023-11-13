@@ -13,7 +13,6 @@ const BillingDetails = () => {
     const [address, setAddress] = useState('');
     const [town, setTown] = useState('');
     const [phone, setPhone] = useState('');
-    const button = useState('PLACE ORDER');
 
     const handleNameChange = (event) => {
         setName(event.target.value);
