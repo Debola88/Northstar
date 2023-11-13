@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-scroll";
 import { RiVisaLine } from "react-icons/ri"
 import { BiLogoMastercard } from 'react-icons/bi';
 import { FaCcPaypal } from 'react-icons/fa6';
@@ -28,28 +27,28 @@ function Footer() {
                     <div className='mb-5 text-left'>
                         <h3 className='uppercase font-bold pb-4 text-black'>Company info</h3>
                         <ul>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>About Us</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Latest Posts</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Contact Us</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Shop</Link></li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>About Us</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Latest Posts</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Contact Us</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Shop</li>
                         </ul>
                     </div>
                     <div className='mb-5 text-left'>
                         <h3 className='uppercase font-bold pb-4 text-black'>Help link</h3>
                         <ul>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Tracking</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Order Status</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Delivery</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>FAQ</Link></li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Tracking</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Order Status</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Delivery</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>FAQ</li>
                         </ul>
                     </div>
                     <div className='mb-5 text-left'>
                         <h3 className='uppercase font-bold pb-4 text-black'>useful link</h3>
                         <ul>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Special Offer</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Gift Cards</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Advertising</Link></li>
-                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'><Link>Terms of Use</Link></li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Special Offer</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Gift Cards</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Advertising</li>
+                            <li className='pb-2 hover:text-[#024E82] transition cursor-pointer'>Terms of Use</li>
                         </ul>
                     </div>
                     <div className='mb-5 text-left'>

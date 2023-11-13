@@ -55,8 +55,7 @@ function ContactForm() {
                         </div>
                     </div>
                     <div className='left-0'>
-                        <label className='pr-4'>Message</label>
-                        <textarea className='text-left w-full h-40 outline-none p-2' onChange={handleMessageChange}
+                        <textarea placeholder='Message' className='text-left w-full h-40 outline-none p-2' onChange={handleMessageChange}
                             value={message} required />
                     </div>
                     <div className='text-left py-10'>
