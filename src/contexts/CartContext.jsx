@@ -139,7 +139,7 @@ export const CartProvider = ({ children }) => {
     deleteItemFromCart,
     emptyCart,
     totalQuantity,
-    totalPrice
+    totalPrice 
   }
 
 
