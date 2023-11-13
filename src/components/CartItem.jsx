@@ -48,7 +48,7 @@ const CartItem = ({ cartItemInfo }) => {
             <div className='flex gap-10 justify-between max-sm:mt-4'>
               <span
                 className='border cursor-pointer rounded-md text-[#024E82] hover:bg-[#024E82] hover:text-white transition p-1 sm:text-2xl text-xl'
-                onClick={() => addItemToCart(cartItemInfo)}
+                onClick={() => addItemToCart({ ...cartItemInfo, quantity: 1 })}
               >
                 <IoIosAdd />
               </span>
