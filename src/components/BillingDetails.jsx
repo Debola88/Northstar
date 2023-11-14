@@ -78,7 +78,7 @@ const BillingDetails = () => {
                         <div>
                             {cartItems.map((cartItem) => <div key={cartItem.id} className='flex justify-between pt-4 text-gray-500'>
                                 <span className=''>{cartItem.name}</span>
-                                <span className=''>{(cartItem.price).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
+                                <span className=''>{(cartItem.price * cartItem.quantity).toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}</span>
                             </div>)}
 
                         </div>

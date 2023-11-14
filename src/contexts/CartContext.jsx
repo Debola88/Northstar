@@ -103,7 +103,7 @@ export const CartProvider = ({ children }) => {
   
   // This useMemo will run everytime a product is added or removed from the cart, hence the dependency array [cartItems]
   useMemo(() => {
-    setTotalQuantity(cartItems.reduce((total, item) => total + item.quantity, 0));
+    setTotalQuantity(cartItems.reduce((total) => total + 1, 0));
     setTotalPrice(cartItems.reduce((total, item) =>  total + item.quantity * item.price, 0));
   }, [cartItems]);
 
